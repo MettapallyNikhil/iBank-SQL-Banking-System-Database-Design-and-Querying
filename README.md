@@ -29,3 +29,5 @@ The database consists of **6 interconnected tables** with no standalone entities
 
 🔚 Conclusion
 This project showcases a real-world banking database system built using SQL Server with a strong focus on relational design, constraints, and transaction management.
+
+<img width="1015" height="827" alt="image" src="https://github.com/user-attachments/assets/39895c16-0559-4417-bbff-174ec28d65ef" />
