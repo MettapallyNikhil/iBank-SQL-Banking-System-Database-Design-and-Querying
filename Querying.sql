@@ -56,3 +56,47 @@ select acid, name, cast (clearbalance as varchar) + ' INR' as currency from Acco
 select acid, name, Convert (varchar,clearbalance) + ' INR' as currency from Account_master
 
 use INDIAN_BANK
+
+Select * from Account_master
+
+select acid, name, Convert (varchar,clearbalance) + ' INR' as currency from Account_master
+
+Select Dateofopening, convert (varchar,dateofopening,1) as DOO from Account_master
+
+select * from Account_master
+
+--Find out no.of customers
+select count(*) from Account_master
+select count(*) NOC from Account_master
+
+select count(*) NOC
+from Account_master
+where BRID = 'BR1' or  BRID= 'BR2'
+
+select count(*) NOC
+from Account_master
+where BRID in ('BR1' , 'BR2')
+
+--first FROM clause and then 'WHERE' clause is going to work and Aggregation atlast 'SELECT'
+
+--Finding total bal
+Select sum(clearbalance) tb
+from Account_master
+
+Select Min(clearbalance) MB
+from Account_master
+
+Select max(clearbalance) MaxB
+from Account_master
+
+Select avg(clearbalance) AB
+from Account_master
+
+--All Aggreagations
+select count(*) NOC,
+sum(clearbalance) tb,
+Min(clearbalance) MB,
+max(clearbalance) MaxB,
+avg(clearbalance) AB
+from Account_master
+where BRID='BR1'
