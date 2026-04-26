@@ -81,7 +81,15 @@ This section demonstrates practical SQL querying skills:
 - `GROUP BY`
 - `HAVING`
 
-📁 All queries are available in the `/queries` folder.
+## 📊 Aggregation Functions
+
+Implemented SQL aggregation techniques for data analysis:
+
+- COUNT() – total records
+- SUM() – total balance
+- AVG() – average values
+- MIN() / MAX() – range analysis
+- GROUP BY – grouped insights
 
 ---
 
