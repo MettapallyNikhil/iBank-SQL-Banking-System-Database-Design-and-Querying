@@ -93,6 +93,22 @@ Implemented SQL aggregation techniques for data analysis:
 
 ---
 
+## 🧩 NULL Handling & Conditional Filtering
+
+This section demonstrates handling missing values and applying conditional logic in SQL queries.
+
+### ✔ NULL Handling
+
+- `ISNULL()` – replaces NULL values with a default value  
+- `NULLIF()` – returns NULL if two expressions are equal  
+
+```sql
+SELECT Name, ISNULL(Unclearbalance, 0) AS SafeBalance
+FROM Account_master;
+
+SELECT Name, NULLIF(Clearbalance, Unclearbalance) AS BalanceCheck
+FROM Account_master;
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases
 - Implementing multi-table relationships
@@ -101,9 +117,6 @@ Implemented SQL aggregation techniques for data analysis:
 - Performing data transformations using built-in functions
 - Handling SQL errors (CHECK, FK violations)
 - Managing data lifecycle (INSERT, UPDATE, DELETE, TRUNCATE)
-
----
-
 
 ---
 
