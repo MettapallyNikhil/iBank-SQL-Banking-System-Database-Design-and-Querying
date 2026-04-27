@@ -100,3 +100,20 @@ max(clearbalance) MaxB,
 avg(clearbalance) AB
 from Account_master
 where BRID='BR1'
+
+--Null values
+select nullif(6,6) as Result
+
+select nullif(6,4) as Result
+
+ select acid, name,clearbalance,unclearbalance, nullif(clearbalance,unclearbalance) as Balance 
+ from Account_master
+
+ --Between function
+ select *
+ from Account_master
+ where Clearbalance between 3000 and 5000
+
+ select name
+ from Account_master
+ where datepart(yy,Dateofopening) between 2020-01-01 and 2024-01-01
