@@ -117,3 +117,28 @@ select nullif(6,4) as Result
  select name
  from Account_master
  where datepart(yy,Dateofopening) between 2020-01-01 and 2024-01-01
+
+ use INDIAN_BANK
+
+ Select * from Account_master
+
+ select min(clearbalance) from Account_master
+ select max(clearbalance) from Account_master
+
+ --When else 
+ Select name, clearbalance,
+		Customertype= case
+		when clearbalance < 5000					then 'Silver'
+		when clearbalance between 5000 and 10000	then 'Gold'
+		when clearbalance between 10000 and 15000	then 'Diamond'
+		else 'Platinum'
+		end
+from Account_master
+
+select * from Account_master 
+
+--A query in the where clause is subquery.
+select name
+from Account_master
+where clearbalance = (select max(clearbalance) from Account_master) 
+
