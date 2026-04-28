@@ -109,6 +109,26 @@ FROM Account_master;
 SELECT Name, NULLIF(Clearbalance, Unclearbalance) AS BalanceCheck
 FROM Account_master;
 
+**## 🧠 Conditional Logic & Subqueries
+
+This section demonstrates applying decision-making logic and nested queries for advanced data retrieval.
+
+---
+
+### ✔ CASE Statement (Conditional Logic)
+
+Used to categorize data based on conditions.
+
+```sql
+SELECT Name, Clearbalance,
+    CASE
+        WHEN Clearbalance < 5000 THEN 'Silver'
+        WHEN Clearbalance BETWEEN 5000 AND 10000 THEN 'Gold'
+        WHEN Clearbalance BETWEEN 10000 AND 15000 THEN 'Diamond'
+        ELSE 'Platinum'
+    END AS CustomerType
+FROM Account_master;**
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases
 - Implementing multi-table relationships
