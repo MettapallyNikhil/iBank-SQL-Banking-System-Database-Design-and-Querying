@@ -129,6 +129,20 @@ SELECT Name, Clearbalance,
     END AS CustomerType
 FROM Account_master;**
 
+## 🔗 Joins & Multi-Table Analysis
+
+This section demonstrates combining data from multiple tables using SQL joins.
+
+### ✔ INNER JOIN
+
+Used to retrieve matching records from related tables.
+
+```sql
+SELECT A.Name, T.Transactiontype
+FROM Account_master A
+INNER JOIN Transaction_master T
+ON A.Acid = T.Acid;
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases
 - Implementing multi-table relationships
