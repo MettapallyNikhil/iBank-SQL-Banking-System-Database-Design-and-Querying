@@ -28,7 +28,6 @@ The database consists of **6 interconnected tables** with no standalone entities
 ---
 
 ## 🔗 Relationships & Data Flow
-
 - Regions → Branches → Accounts  
 - Accounts → Transactions  
 - Products assigned to Accounts  
@@ -39,7 +38,6 @@ This ensures a **fully normalized relational structure**.
 ---
 
 ## 💾 Data Storage & Management
-
 Implemented SQL operations:
 - Table creation (`CREATE TABLE`)
 - Data insertion (`INSERT`)
@@ -54,8 +52,6 @@ Implemented SQL operations:
 ---
 
 ## 🔍 Querying & Data Analysis
-
-This section demonstrates practical SQL querying skills:
 
 ### ✔ Data Retrieval
 - `SELECT *` (all columns)
@@ -81,90 +77,88 @@ This section demonstrates practical SQL querying skills:
 - `GROUP BY`
 - `HAVING`
 
-## 📊 Aggregation Functions
+---
 
+## 📊 Aggregation Functions
 Implemented SQL aggregation techniques for data analysis:
 
-- COUNT() – total records
-- SUM() – total balance
-- AVG() – average values
-- MIN() / MAX() – range analysis
-- GROUP BY – grouped insights
+- COUNT() – total records  
+- SUM() – total balance  
+- AVG() – average values  
+- MIN() / MAX() – range analysis  
+- GROUP BY – grouped insights  
 
 ---
 
 ## 🧩 NULL Handling & Conditional Filtering
 
-This section demonstrates handling missing values and applying conditional logic in SQL queries.
-
 ### ✔ NULL Handling
-
 - `ISNULL()` – replaces NULL values with a default value  
 - `NULLIF()` – returns NULL if two expressions are equal  
 
-```sql
-SELECT Name, ISNULL(Unclearbalance, 0) AS SafeBalance
-FROM Account_master;
-
-SELECT Name, NULLIF(Clearbalance, Unclearbalance) AS BalanceCheck
-FROM Account_master;
-
-**## 🧠 Conditional Logic & Subqueries
-
-This section demonstrates applying decision-making logic and nested queries for advanced data retrieval.
+### ✔ Range Filtering
+- `BETWEEN` – filters values within a specific range  
 
 ---
 
-### ✔ CASE Statement (Conditional Logic)
+## 🧠 Conditional Logic & Subqueries
 
-Used to categorize data based on conditions.
+### ✔ CASE Statement
+Used to categorize data based on conditions such as customer segmentation.
 
-```sql
-SELECT Name, Clearbalance,
-    CASE
-        WHEN Clearbalance < 5000 THEN 'Silver'
-        WHEN Clearbalance BETWEEN 5000 AND 10000 THEN 'Gold'
-        WHEN Clearbalance BETWEEN 10000 AND 15000 THEN 'Diamond'
-        ELSE 'Platinum'
-    END AS CustomerType
-FROM Account_master;**
+### ✔ Subqueries
+Used to retrieve data based on results of another query (e.g., highest balance accounts).
+
+---
 
 ## 🔗 Joins & Multi-Table Analysis
 
-This section demonstrates combining data from multiple tables using SQL joins.
-
 ### ✔ INNER JOIN
-
 Used to retrieve matching records from related tables.
 
-```sql
-SELECT A.Name, T.Transactiontype
-FROM Account_master A
-INNER JOIN Transaction_master T
-ON A.Acid = T.Acid;
+### ✔ LEFT JOIN
+Returns all records from the left table and matching records from the right table.
+
+### ✔ RIGHT JOIN
+Returns all records from the right table and matching records from the left table.
+
+### ✔ FULL JOIN
+Returns all records when there is a match in either table.
+
+### ✔ CROSS JOIN
+Returns Cartesian product of tables.
+
+### ✔ SELF JOIN
+Used to represent hierarchical relationships (e.g., employee-manager structure).
+
+---
 
 ## 🧠 Key Learnings
-- Designing normalized relational databases
-- Implementing multi-table relationships
-- Applying constraints for data integrity
-- Writing efficient SQL queries
-- Performing data transformations using built-in functions
-- Handling SQL errors (CHECK, FK violations)
-- Managing data lifecycle (INSERT, UPDATE, DELETE, TRUNCATE)
+- Designing normalized relational databases  
+- Implementing multi-table relationships  
+- Applying constraints for data integrity  
+- Writing efficient SQL queries  
+- Performing data transformations using built-in functions  
+- Handling SQL errors (CHECK, FK violations)  
+- Managing data lifecycle (INSERT, UPDATE, DELETE, TRUNCATE)  
 
 ---
 
 ## 🚀 Future Enhancements
-- Indexing for performance optimization
-- Stored procedures for transaction handling
-- Triggers for audit logging
-- Views for reporting and analytics
-- Role-based access control
-- Advanced JOIN queries for multi-table analysis
+- Indexing for performance optimization  
+- Stored procedures for transaction handling  
+- Triggers for audit logging  
+- Views for reporting and analytics  
+- Role-based access control  
+- Advanced JOIN queries for multi-table analysis  
 
 ---
 
 ## 🔚 Conclusion
 This project showcases a **real-world banking database system** built using SQL Server, covering both **data storage and querying aspects**. It demonstrates strong fundamentals in relational database design, data integrity, and practical SQL usage.
+
+---
+
+## 📌 ER Diagram
 
 <img width="1015" height="827" alt="image" src="https://github.com/user-attachments/assets/39895c16-0559-4417-bbff-174ec28d65ef" />
