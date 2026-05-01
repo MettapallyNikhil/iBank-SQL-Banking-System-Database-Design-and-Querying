@@ -142,3 +142,59 @@ select name
 from Account_master
 where clearbalance = (select max(clearbalance) from Account_master) 
 
+Use Indian_Bank
+
+select * 
+from Account_master
+
+select avg(clearbalance) from Account_master
+
+--Subquery
+select *, Clearbalance-(select avg(clearbalance) from Account_master) as diff
+from Account_master
+
+select *
+from Account_master
+where Clearbalance = (
+				select max(clearbalance) 
+				from Account_master
+				where Clearbalance < (select max(clearbalance) from Account_master)
+					)
+
+-- Max 32 levels of Nesting is allowed in an subquery
+
+--Finding the 10th highest
+Select *
+from Account_master
+where Clearbalance = (
+				Select min(clearbalance)
+				from Account_master
+				where Clearbalance in (
+							Select distinct Top 10 Clearbalance
+							from Account_master
+							order by Clearbalance desc
+										)
+					)	
+				
+CREATE TABLE EmpInfo
+(
+    EID					INT						PRIMARY KEY,
+    EmpName				VARCHAR(50),
+    Salary				INT,
+    DeptName			VARCHAR(50)
+);
+
+INSERT INTO EmpInfo VALUES (1, 'John', 10000, 'HR');
+INSERT INTO EmpInfo VALUES (2, 'Girish', 12000, 'Sales');
+INSERT INTO EmpInfo VALUES (3, 'Mannat', 8000, 'Sales');
+INSERT INTO EmpInfo VALUES (4, 'Salman', 14000, 'HR');
+INSERT INTO EmpInfo VALUES (5, 'Ratan', 9000, 'HR');
+INSERT INTO EmpInfo VALUES (6, 'Peter', 11000, 'Sales');
+
+select *
+from EmpInfo E1
+where Salary > (
+			Select avg(Salary)
+			from EmpInfo E2
+			where E2.DeptName = E1.DeptName			
+			)
