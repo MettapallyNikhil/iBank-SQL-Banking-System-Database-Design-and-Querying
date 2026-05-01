@@ -132,6 +132,18 @@ Returns Cartesian product of tables.
 Used to represent hierarchical relationships (e.g., employee-manager structure).
 
 ---
+### ✔ Advanced Subqueries
+
+- Scalar subqueries for value comparison  
+- Nested subqueries (multiple levels)  
+- Correlated subqueries (row-level comparison)  
+- Using subqueries for ranking problems (Nth highest)  
+
+📌 Use Cases:
+- Finding second highest / Nth highest values  
+- Comparing values with global or group averages  
+- Performing row-wise dynamic filtering  
+
 
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
