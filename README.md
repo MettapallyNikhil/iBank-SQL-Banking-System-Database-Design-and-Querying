@@ -144,6 +144,16 @@ Used to represent hierarchical relationships (e.g., employee-manager structure).
 - Comparing values with global or group averages  
 - Performing row-wise dynamic filtering  
 
+### ✔ Correlated Subqueries (EXISTS / NOT EXISTS)
+- Correlated subqueries execute row-by-row based on the outer query  
+- Used for existence checks instead of value comparison  
+- `EXISTS` returns TRUE if matching records exist  
+- `NOT EXISTS` returns TRUE if no matching records are found
+
+📌 Use Cases:
+- Identifying accounts with transactions  
+- Finding inactive customers (no transactions)  
+- Validating relationships between tables  
 
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
