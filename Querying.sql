@@ -1,4 +1,4 @@
-Use INDIAN_BANK
+ Use INDIAN_BANK
 
 --All cols and All rows
 Select * from Account_master
@@ -197,4 +197,28 @@ where Salary > (
 			Select avg(Salary)
 			from EmpInfo E2
 			where E2.DeptName = E1.DeptName			
+			)
+
+--Correlated Subquery
+-- outer query is first executed
+-- value by value at a time... 
+-- dependant on the main query
+-- loop in a loop
+
+--Whoever did the transactions
+select *
+from Account_master as AM 
+where exists (
+			Select * 
+			from Transaction_master as TM
+			where Am.Acid = Tm.Acid
+			)
+
+--Who didnt do the transactions
+select *
+from Account_master as AM 
+where not exists (
+			Select * 
+			from Transaction_master as TM
+			where Am.Acid = Tm.Acid
 			)
