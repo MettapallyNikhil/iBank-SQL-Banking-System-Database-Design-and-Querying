@@ -155,6 +155,12 @@ Used to represent hierarchical relationships (e.g., employee-manager structure).
 - Finding inactive customers (no transactions)  
 - Validating relationships between tables  
 
+### ✔ System Tables & Database Metadata
+- Accessing system catalogs using `sys.tables`, `sys.columns`, `sys.databases`  
+- Retrieving database structure information programmatically  
+- Identifying table and column relationships using metadata joins  
+- Using subqueries to dynamically fetch object IDs  
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
 - Implementing multi-table relationships  
