@@ -222,3 +222,39 @@ where not exists (
 			from Transaction_master as TM
 			where Am.Acid = Tm.Acid
 			)
+
+-- to display data from all the tables - we use joins
+-- If we dont want to display the other table - then subquery or correlated subquery
+
+-- To know how many tables are there in a Database
+select * from sys.tables
+select count(*) as NoOfTables from sys.tables
+
+--To know how many columns
+select * from sys.columns where object_id=1397580017
+select count(*) as NoOfColumns from sys.columns where object_id=1397580017
+
+--Subquery
+Select *
+from sys.columns
+where object_id = (select object_id from sys.tables where name='Transaction_master')
+
+--ColName
+--Identify the table
+select A.Name ColName, B.Name TableName
+from sys.columns as A join sys.tables as B on A.object_id = B.object_id 
+where A.Name = 'Clearbalance'
+
+--Check Emp table exists or Not
+if exists (Select * from sys.tables where name = 'Emp')
+		drop table 'Emp'
+
+--All db Names
+select * from sys.databases
+
+-- All Sp
+select * from sys.procedures
+
+--All Triggers
+Select * from sys.Triggers
+
