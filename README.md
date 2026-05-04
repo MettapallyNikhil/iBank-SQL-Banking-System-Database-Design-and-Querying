@@ -161,6 +161,12 @@ Used to represent hierarchical relationships (e.g., employee-manager structure).
 - Identifying table and column relationships using metadata joins  
 - Using subqueries to dynamically fetch object IDs  
 
+## 📊 SQL Interview Case Study – Customer Analytics
+### ✔ Month-wise New Customer Acquisition
+- Identify new customers based on their first transaction  
+- Calculate number of new customers acquired each month  
+- Aggregate results month-wise  
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
 - Implementing multi-table relationships  
