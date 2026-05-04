@@ -258,3 +258,85 @@ select * from sys.procedures
 --All Triggers
 Select * from sys.Triggers
 
+-- Interview question
+--Write a SQL query to determine the **number of new customers acquired each month**.
+ 
+CREATE TABLE SalesData
+(
+    DoS				DATE				Primary key,
+    Customer		VARCHAR(10),
+    SalesAmount		INT
+);
+
+Select * from SalesData
+
+INSERT INTO SalesData VALUES
+-- JAN
+('2020-01-12','C1',1000),
+('2020-01-20','C2',1200),
+-- FEB
+('2020-02-07','C3',500),
+('2020-02-15','C1',300),
+('2020-02-21','C4',750),
+-- MAR
+('2020-03-02','C5',1500),
+('2020-03-22','C6',8000),
+('2020-03-25','C4',7000),
+('2020-03-26','C2',1200),
+-- APR
+('2020-04-05','C7',900),
+('2020-04-10','C1',1100),
+('2020-04-18','C8',2000),
+-- MAY
+('2020-05-03','C2',1500),
+('2020-05-14','C9',2500),
+('2020-05-20','C3',800),
+-- JUN
+('2020-06-01','C10',3000),
+('2020-06-11','C4',1000),
+('2020-06-19','C1',700),
+-- JUL
+('2020-07-07','C11',4000),
+('2020-07-15','C5',1200),
+('2020-07-25','C2',900),
+-- AUG
+('2020-08-02','C12',3500),
+('2020-08-10','C6',2000),
+('2020-08-21','C3',1100),
+-- SEP
+('2020-09-05','C13',5000),
+('2020-09-17','C7',1500),
+('2020-09-28','C1',800),
+-- OCT
+('2020-10-03','C14',4500),
+('2020-10-12','C8',2200),
+('2020-10-20','C4',1300),
+-- NOV
+('2020-11-01','C15',6000),
+('2020-11-11','C2',1400),
+('2020-11-19','C9',1800),
+-- DEC
+('2020-12-05','C16',7000),
+('2020-12-15','C10',2500),
+('2020-12-22','C3',900);
+
+select * 
+from SalesData
+where DoS = 'YYYY-MM-DD'
+
+Select 
+	FORMAT(Purchase, 'MMM') as MonthName, 
+	count(*) as NewCustomers
+from (
+				select Customer, min(DoS) as Purchase
+				from SalesData
+				group by Customer
+				) X
+group by 
+	FORMAT(Purchase, 'MMM'), 
+	MONTH(Purchase)
+Order by 
+	Month(Purchase);
+
+
+
