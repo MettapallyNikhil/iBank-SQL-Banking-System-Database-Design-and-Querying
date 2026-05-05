@@ -258,7 +258,7 @@ select * from sys.procedures
 --All Triggers
 Select * from sys.Triggers
 
--- Interview question
+-- Interview question -- Derived Query
 --Write a SQL query to determine the **number of new customers acquired each month**.
  
 CREATE TABLE SalesData
@@ -337,6 +337,35 @@ group by
 	MONTH(Purchase)
 Order by 
 	Month(Purchase);
+
+-- Derived Tables
+-- when we add another query starting 'from' is Derived table
+-- but whereas if we use from 'where' its subquery
+
+select *
+from (select * from Account_master) S
+
+-- Joins
+select A.Acid, name, count(*) as NoOfT
+from Account_master as a join Transaction_master as t on a.Acid = t.Acid
+where datepart(yy, Dateoftransaction) = 2025
+group by a.Acid, Name
+
+--Derived query
+select A.acid, name,  NoOfT
+from Account_master A
+join (
+		select Acid, count(*) as NoOfT
+		from Transaction_master
+		where datepart(yy, Dateoftransaction) = 2025
+		group by Acid
+		) B
+on A.Acid = B.Acid
+
+-- Always we need to elimate the data and then join it..  for fast processing of the data
+
+
+
 
 
 
