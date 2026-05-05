@@ -161,6 +161,12 @@ Used to represent hierarchical relationships (e.g., employee-manager structure).
 - Identifying table and column relationships using metadata joins  
 - Using subqueries to dynamically fetch object IDs  
 
+### ✔ Derived Tables (Inline Views)
+- Derived tables are subqueries placed in the `FROM` clause  
+- Used to create temporary result sets for further querying  
+- Must always be assigned an alias  
+- Useful for simplifying complex joins and aggregations  
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
