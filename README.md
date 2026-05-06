@@ -167,6 +167,11 @@ Used to represent hierarchical relationships (e.g., employee-manager structure).
 - Must always be assigned an alias  
 - Useful for simplifying complex joins and aggregations  
 
+### ✔ Advanced Aggregation – CUBE & ROLLUP
+- Implemented multidimensional aggregation using `CUBE` and `ROLLUP`  
+- Generated summarized reports across multiple grouping combinations  
+- Used advanced `GROUP BY` operations for analytical reporting  
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
