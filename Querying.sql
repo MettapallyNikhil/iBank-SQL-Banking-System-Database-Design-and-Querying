@@ -364,8 +364,42 @@ on A.Acid = B.Acid
 
 -- Always we need to elimate the data and then join it..  for fast processing of the data
 
+-- Cube Operator
 
+CREATE TABLE Item
+(
+    ItemName		Varchar(30)				Primary key,
+    Color			VARCHAR(10),
+    Onty			INT
+);
 
+Select * from Item
 
+INSERT INTO item VALUES ('Chair', 'Black', 10);
+INSERT INTO item VALUES ('Table', 'Red', 20);
+INSERT INTO item VALUES ('WChair', 'Red', 50);
+INSERT INTO item VALUES ('WTable', 'Black', 75);
+INSERT INTO item VALUES ('FChair', 'Black', 25)
 
+--Total
+select SUM(Onty) as Total from Item
 
+--Chair
+select SUM(Onty) as Total from Item
+where Color = 'Red'
+
+-- Cube will give all permutations and combinations
+
+Select Itemname, color, sum(Onty) as total
+from Item
+group by ItemName, Color
+
+--Query with Cube
+Select Itemname, color, sum(Onty) as total
+from Item
+group by ItemName, Color with cube
+
+--Rollup - less permuatitions and combinations
+Select Itemname, color, sum(Onty) as total
+from Item
+group by ItemName, Color with Rollup
