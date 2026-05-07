@@ -172,6 +172,16 @@ Used to represent hierarchical relationships (e.g., employee-manager structure).
 - Generated summarized reports across multiple grouping combinations  
 - Used advanced `GROUP BY` operations for analytical reporting  
 
+## 📈 Window Functions & Analytical SQL
+🧠 Concepts Used:
+- `ROW_NUMBER()`
+- `PARTITION BY`
+- `RANK()`
+- `DENSE_RANK()`
+- `NTILE()`
+- Common Table Expressions (`CTE`)
+- Analytical aggregations
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
