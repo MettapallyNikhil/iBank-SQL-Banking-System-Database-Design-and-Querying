@@ -403,3 +403,116 @@ group by ItemName, Color with cube
 Select Itemname, color, sum(Onty) as total
 from Item
 group by ItemName, Color with Rollup
+
+--Row_Number
+select acid, name, ROW_NUMBER() over (Order by Acid Asc) as Rno
+from Account_master
+
+--Partition by
+select acid,BRID, name, ROW_NUMBER() over (Partition by Brid Order by Acid Asc) as Rno
+from Account_master
+
+--Getting 22nd Row
+Select *
+from (
+		select acid, name, ROW_NUMBER() over (Order by Acid Asc) as Rno
+		from Account_master
+	) X
+where Rno = 22
+
+Select *
+from (
+		select acid, name, ROW_NUMBER() over (Order by Acid Asc) as Rno
+		from Account_master
+	) X
+where Rno between 22 and 27
+
+--1st person from each branch 
+select Name
+from (
+		select acid,BRID, name, ROW_NUMBER() over (Partition by Brid Order by Acid Asc) as Rno
+		from Account_master
+	) x
+where Rno = 1 
+
+-- Get Every 5th Row from the table
+Select *
+from (
+		select acid, name, ROW_NUMBER() over (Order by Acid Asc) as Rno
+		from Account_master
+	) X
+where Rno % 5 = 0
+
+--Rank and Dense Rank
+select acid, name,BRID, Clearbalance,
+		Rank()			over (Order by Clearbalance asc ) as Bal,
+		Dense_Rank()	over (Order by Clearbalance asc ) as BalD
+from Account_master
+
+--Who is having the highest bal in the bank
+Select *
+from		(
+			select acid, name,BRID, Clearbalance,
+			Dense_Rank()	over (Order by Clearbalance desc ) as BalD
+			from Account_master
+			) X
+where BalD = 1
+
+--Who is having the highest bal in the bank - Branch wise ('Partition By')
+Select *
+from		(
+			select acid, name,BRID, Clearbalance,
+			Dense_Rank()	over (Partition by Brid Order by Clearbalance desc ) as BalD
+			from Account_master
+			) X
+where BalD = 1
+
+--Ntile() -- split data into groups
+select acid, name,Brid,  Ntile(6) over (Order by Acid Asc) as GrpNo
+from Account_master
+
+--Selecting the particular group number
+select *
+from	(
+		select acid, name,Brid,  Ntile(6) over (Order by Acid Asc) as GrpNo
+		from Account_master
+		) x
+where GrpNo = 4
+
+--Dividing even further by using the Partition in the Branch Id
+select *
+from	(
+		select acid, name,Brid,  Ntile(6) over (Partition by Brid Order by Acid Asc) as GrpNo
+		from Account_master
+		) x
+where GrpNo = 1
+
+--Common table expression
+with x
+as 
+		(
+		select acid, name,Brid,  Ntile(6) over (Partition by Brid Order by Acid Asc) as GrpNo
+		from Account_master
+		) 
+select * from x where GrpNo = 5;
+
+with x
+as 
+		(
+		select acid, name,Brid,  Ntile(6) over (Partition by Brid Order by Acid Asc) as GrpNo
+		from Account_master
+		) 
+select * from x where GrpNo = 1
+
+-- WHICH BRANCH HAS MORE CUSTOMERS
+select brid, count(*) as Cnt
+from Account_master
+group by BRID
+
+select count(*) as Customercount, BRID
+from	(
+			select brid, name, Acid
+			from Account_master
+		) x
+group by BRID
+order by Customercount asc
