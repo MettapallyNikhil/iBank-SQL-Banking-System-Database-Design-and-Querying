@@ -516,3 +516,63 @@ from	(
 		) x
 group by BRID
 order by Customercount asc
+
+-- derived tablesa re slow, CTE is faster
+-- only that query we can use multiple times not the other ones.
+with x
+as 
+		(
+		select Brid, count(*) as Cnt 
+		from Account_master
+		group by brid
+		) 
+select brid
+from x
+where cnt = (select max(cnt) from x)
+
+--Temp Table
+select brid, count(*) as Cnt into #k
+from Account_master
+group by BRID
+
+--1st table
+select brid 
+from #k
+where cnt = (select max(cnt) from #k)
+
+--2nd table
+select brid 
+from #k
+where cnt = (
+select max(cnt) from #k where cnt < (select max(cnt) from #k) 
+			)
+
+select * from #k
+
+-- Global Temp table
+select brid, count(*) as Cnt into ##k
+from Account_master
+group by BRID
+
+select * from ##k
+
+--removing duplicate data
+select * from dup_values
+
+CREATE TABLE dup_values
+(
+    Name		Varchar(30),
+);
+
+insert into dup_values values ('Ram');
+insert into dup_values values ('Rahim');
+insert into dup_values values ('Ram');
+insert into dup_values values ('Rahim');
+insert into dup_values values ('Robert');
+insert into dup_values values ('Ram');
+insert into dup_values values ('Robert');
+
+select name, count(*) as cnt
+from dup_values
+group by Name
+having count(*) > 1
