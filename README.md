@@ -182,6 +182,14 @@ Used to represent hierarchical relationships (e.g., employee-manager structure).
 - Common Table Expressions (`CTE`)
 - Analytical aggregations
 
+## ⚡ Common Table Expressions (CTE) & Temporary Tables
+🧠 Concepts Used:
+- Common Table Expressions (`WITH`)
+- Local Temporary Tables (`#`)
+- Global Temporary Tables (`##`)
+- Aggregation with reusable datasets
+- Nested filtering using subqueries
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
