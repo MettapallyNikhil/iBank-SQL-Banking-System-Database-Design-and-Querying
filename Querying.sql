@@ -576,3 +576,31 @@ select name, count(*) as cnt
 from dup_values
 group by Name
 having count(*) > 1
+
+--by using distinct we can only see the data which are not duplicates
+select distinct name
+from dup_values
+
+--By using CTE we can delete the duplicate data
+with x_cte
+as 
+		(
+		select name,
+		Row_number() over (Partition by name order by name asc) Rno 
+		from dup_values
+		)
+delete 
+from x_cte
+where Rno > 1
+
+select name
+from dup_values
+
+--finding out running total 
+select Clearbalance,name,acid, sum(clearbalance) over (order by acid asc) Running_Total
+from Account_master
+
+--Based on the branch
+select	Clearbalance,name,acid, 
+		brid, sum(clearbalance) over (partition by Brid order by acid asc) Running_Total
+from Account_master
