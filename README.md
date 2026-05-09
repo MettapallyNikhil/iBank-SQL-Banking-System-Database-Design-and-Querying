@@ -190,6 +190,14 @@ Used to represent hierarchical relationships (e.g., employee-manager structure).
 - Aggregation with reusable datasets
 - Nested filtering using subqueries
 
+Window Functions → CTE → Duplicate Handling → Running Totals
+🧠 Concepts Used:
+- `DISTINCT`
+- `ROW_NUMBER()`
+- `PARTITION BY`
+- Window aggregation (`SUM() OVER`)
+- Common Table Expressions (`CTE`)
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
