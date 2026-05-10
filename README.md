@@ -198,6 +198,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Window aggregation (`SUM() OVER`)
 - Common Table Expressions (`CTE`)
 
+## 🔄 ETL Concepts & Incremental Loading
+### ✔ ETL (Extract, Transform, Load)
+- Explored ETL concepts used for data migration and synchronization
+- Understood Extract, Transform, and Load workflow in database systems
+- Simulated incremental data loading using SQL Server
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
