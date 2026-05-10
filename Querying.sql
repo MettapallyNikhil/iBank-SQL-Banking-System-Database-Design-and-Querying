@@ -596,11 +596,58 @@ where Rno > 1
 select name
 from dup_values
 
---finding out running total 
+--finding out running total - for only 1 movie
 select Clearbalance,name,acid, sum(clearbalance) over (order by acid asc) Running_Total
 from Account_master
 
---Based on the branch
+--Based on the branch - if there are multiple movies
 select	Clearbalance,name,acid, 
 		brid, sum(clearbalance) over (partition by Brid order by acid asc) Running_Total
 from Account_master
+
+/*
+if we want to move the data from one server to other.
+if we want to move the water from one place to other place, we use the motor (that motor is ETL), right, 
+just like that we will have the ETL software(Extract, Transform and Load) in SQL
+*/
+
+--Incremental Loading using Merge command
+create database mergeDB
+
+Use mergeDB
+
+create table Emp
+(
+Name		varchar(20)				primary key,
+eid			int						not null,
+salary		money					not null
+);
+
+select * from Emp
+
+insert into Emp 
+values
+('Nikhil', 1, 4564),
+('Nihal', 2, 453654564),
+('Nihil', 3, 45664564),
+('Nihol', 4,5664564),
+('Nikhi',5, 4565688464)
+
+create table Merge_Emp
+(
+Name		varchar(20)				primary key,
+eid			int						not null,
+salary		money					not null
+);
+
+select * from Emp
+select * from Merge_Emp
+
+merge merge_emp D
+using Emp S
+on d.eid=s.eid
+
+--Insert
+when not matched by target
+then 
+insert (Name, eid, Salary) values (s.Name, s.eid, s.Salary);
