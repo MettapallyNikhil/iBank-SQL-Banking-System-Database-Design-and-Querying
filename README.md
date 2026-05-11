@@ -199,10 +199,11 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Common Table Expressions (`CTE`)
 
 ## 🔄 ETL Concepts & Incremental Loading
-### ✔ ETL (Extract, Transform, Load)
-- Explored ETL concepts used for data migration and synchronization
-- Understood Extract, Transform, and Load workflow in database systems
-- Simulated incremental data loading using SQL Server
+- Implemented full table synchronization using `MERGE`
+- Inserted new records not present in target tables
+- Updated existing records based on column-level changes
+- Deleted obsolete records missing from source tables
+- Compared source and target datasets dynamically
 
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
