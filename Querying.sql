@@ -643,6 +643,10 @@ salary		money					not null
 select * from Emp
 select * from Merge_Emp
 
+update Emp
+set salary = 78945
+where eid = 5
+
 merge merge_emp D
 using Emp S
 on d.eid=s.eid
@@ -650,4 +654,12 @@ on d.eid=s.eid
 --Insert
 when not matched by target
 then 
-insert (Name, eid, Salary) values (s.Name, s.eid, s.Salary);
+insert (Name, eid, Salary) values (s.Name, s.eid, s.Salary)
+-- Update
+when matched and d.name <> s.name or d.salary <> s.salary
+then 
+update
+set d.name = s.name, d.salary = s.salary
+--Delete
+when not matched by source
+then delete;
