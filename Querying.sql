@@ -663,3 +663,44 @@ set d.name = s.name, d.salary = s.salary
 --Delete
 when not matched by source
 then delete;
+
+use INDIAN_BANK
+
+  --Stored Procedures
+  select top 10 *
+  from Transaction_master
+  where Acid = 101
+  order by Dateoftransaction desc
+
+  /*
+  there are 3 options to keep the data in the DB server
+  Views -				if we dont want to provide any input parameters (No I/p are supported)
+  Stored procedures -  they support all the i/p parameters, output, DDL, DML, Cache execution plan also
+  Functions -			they support all the i/p parameters, output parameters
+  Data in the Tables
+  */
+
+  -- Syntax - code will be centralised using SP´s
+  create procedure <Proc Name>
+  (
+	Input
+	Output
+  )
+  As
+  Begin
+	  -- Variables
+	  -- DDL
+	  -- DML
+	  -- Programming
+	  -- Call a function
+	  -- Call a SP
+	  -- Cursors
+	  -- Return Statement
+  End
+
+  -- call the SP
+  Exec <Sp Name>
+  or 
+  Execute <Sp Name>
+
+  -- SP can store an execution plan
