@@ -205,6 +205,19 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Deleted obsolete records missing from source tables
 - Compared source and target datasets dynamically
 
+## ⚙️ Stored Procedures & Programmable SQL
+📌 Features:
+- Supports input and output parameters
+- Can contain DDL and DML operations
+- Supports variables, conditional logic, and procedural programming
+- Can invoke other stored procedures and functions
+
+📌 Use Cases:
+- Centralized business logic
+- Reusable transaction operations
+- Secure database access
+- Performance optimization through execution plan reuse
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
