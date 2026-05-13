@@ -218,6 +218,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Secure database access
 - Performance optimization through execution plan reuse
 
+### ✔ Parameterized Stored Procedures
+- Created reusable stored procedures using `CREATE PROCEDURE`
+- Executed stored procedures using `EXEC` and `EXECUTE`
+- Implemented input parameter handling for dynamic query execution
+- Retrieved account balance information using parameterized procedures
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
