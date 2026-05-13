@@ -683,8 +683,8 @@ use INDIAN_BANK
   -- Syntax - code will be centralised using SP´s
   create procedure <Proc Name>
   (
-	Input
-	Output
+	Input -- To pass the data to SP
+	Output -- To return from SP
   )
   As
   Begin
@@ -704,3 +704,45 @@ use INDIAN_BANK
   Execute <Sp Name>
 
   -- SP can store an execution plan
+
+--Create a Sample Proc
+Create proc Welcome
+as 
+begin
+		print 'Welcome to Sql'
+end
+
+Execute Welcome
+
+-- creating SP with 1 input parameter
+create proc Getbalance
+(
+		@acid int
+)
+as 
+begin
+		select clearbalance
+		from Account_master
+		where Acid = @acid
+end
+
+exec Getbalance 101
+
+
+-- 1 input and 1 output parameter
+create proc Getbalance1
+(
+		@acid		int,
+		@balance	money	output
+)
+as
+begin 
+		select @balance = clearbalance
+		from Account_master
+		where Acid= @acid
+end
+go
+
+declare @balance money
+exec Getbalance1 @acid = 101, @balance output
+print @balance
