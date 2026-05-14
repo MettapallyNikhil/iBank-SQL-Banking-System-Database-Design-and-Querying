@@ -224,6 +224,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Implemented input parameter handling for dynamic query execution
 - Retrieved account balance information using parameterized procedures
 
+### ✔ Output Parameters & Procedure Alteration
+- Implemented stored procedures with both input and output parameters
+- Retrieved dynamic values from database tables using output variables
+- Executed procedures using declared variables and output bindings
+- Modified existing procedures using `ALTER PROCEDURE`
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
