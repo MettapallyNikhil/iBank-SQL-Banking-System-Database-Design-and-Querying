@@ -725,9 +725,17 @@ begin
 		from Account_master
 		where Acid = @acid
 end
+go
 
-exec Getbalance 101
+exec Getbalance 164
 
+SELECT clearbalance
+FROM Account_master
+WHERE Acid = 164
+
+sp_help Account_master
+
+select * from Account_master
 
 -- 1 input and 1 output parameter
 create proc Getbalance1
@@ -746,3 +754,55 @@ go
 declare @balance money
 exec Getbalance1 @acid = 101, @balance output
 print @balance
+
+-- With 1 input
+create proc GetB
+(
+		@acid			int
+)
+as 
+begin
+	select clearbalance
+	from Account_master
+	where Acid = @acid
+end
+
+exec GetB 155	
+
+-- with 1 input and 1 output
+create proc GetBa
+(
+		@acid			int,
+		@Bal			Money		out
+)
+as 
+begin
+		select @bal = clearbalance
+		from Account_master
+		where Acid = @acid
+end
+
+--We need to exec all at once, Declare, exec and print or else the code wont work
+declare @balance Money
+exec	GetBa	154, @balance output
+print @balance
+
+-- Altering the SP
+alter proc GetBa
+(
+			@acid			int,
+			@bal			money			out,
+			@name			varchar(100)	out
+)
+as 
+begin
+			select @Bal = clearbalance, @name = Name
+			from Account_master
+			where Acid = @acid
+end
+
+declare @bal	money
+declare @name	varchar(100)
+exec	GetBa	122, @bal output, @name output
+print	@bal
+print	@name
