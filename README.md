@@ -230,6 +230,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Executed procedures using declared variables and output bindings
 - Modified existing procedures using `ALTER PROCEDURE`
 
+⚙️ Stored Procedures & Programmable SQL
+- Implemented conditional validation inside stored procedures using `IF...ELSE`
+- Verified account existence before processing queries
+- Handled invalid account inputs gracefully
+- Combined procedural logic with output parameters for controlled execution
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
