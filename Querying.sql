@@ -806,3 +806,36 @@ declare @name	varchar(100)
 exec	GetBa	122, @bal output, @name output
 print	@bal
 print	@name
+
+alter proc GetBa
+(
+			@acid			int,
+			@bal			money			out,
+			@name			varchar(100)	out
+)
+as 
+begin
+			declare @cnt	Int
+
+			select @cnt = count(*) from Account_master where Acid = @acid
+
+			if @cnt = 0
+			begin 
+					SELECT 'Invalid Account Number' AS Message
+			end
+			
+			else
+			begin
+					select @Bal = clearbalance, @name = Name
+					from Account_master
+					where Acid = @acid
+			end
+end
+
+declare @bal	money
+declare @name	varchar(100)
+exec	GetBa	1525, @bal output, @name output
+select	@bal
+select	@name
+
+
