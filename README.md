@@ -236,6 +236,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Handled invalid account inputs gracefully
 - Combined procedural logic with output parameters for controlled execution
 
+### ✔ Return Codes & Execution Status Handling
+- Implemented stored procedure return codes for execution status tracking
+- Returned custom status values for success and failure conditions
+- Controlled execution flow using conditional return validation
+- Combined output parameters with procedural status handling
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
