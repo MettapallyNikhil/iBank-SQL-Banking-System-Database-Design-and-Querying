@@ -834,8 +834,67 @@ end
 
 declare @bal	money
 declare @name	varchar(100)
-exec	GetBa	1525, @bal output, @name output
+exec	GetBa	101, @bal output, @name output
 select	@bal
 select	@name
 
+use indian_bank
+
+/*
+--Return Statement
+Check whether the SP is executed well of not?
+
+Returns 0	-- Success
+Returns Non Zero	-- Failed
+
+SQl will stop execution of the procedure, when it findds Return keyword
+*/
+
+alter proc GetBa
+(
+			@acid			int,
+			@bal			money			out,
+			@name			varchar(100)	out
+)
+as 
+begin
+			declare @cnt	Int
+
+			select @cnt = count(*) from Account_master where Acid = @acid
+
+			if @cnt = 0
+			begin 
+					SELECT 'Invalid Account Number' AS Message
+					Return 22
+			end
+			
+			else
+			begin
+					select @Bal = clearbalance, @name = Name
+					from Account_master
+					where Acid = @acid
+
+					Return 0
+			end
+end
+
+declare @RC		Int
+declare @bal	money
+declare @name	varchar(100)
+
+exec	@rc = GetBa	101, @bal output, @name output
+select	@RC
+
+if(@RC = 0)
+begin	
+			select @bal
+			select @name
+end
+else
+begin
+			select 'Sp failed to execute'
+end
+
+select	@bal
+select	@name
 
