@@ -898,3 +898,36 @@ end
 select	@bal
 select	@name
 
+-- Dropping an Proc
+drop proc Welcome
+
+-- finding syntax - to get the proc code, where we can modify it further
+sp_helptext Welcome
+
+/*
+types of SP's
+-- system defined Sp's
+sp_help
+sp_helpdb
+sp_helptext
+sp_indexes
+-- User defined Sp's
+Never create user SP's names prefix with Sp_getbalance
+*/
+
+/****************************
+Extended SP's
+If has SP has C or C++ code then its Extended SP
+example: sending an email, creating folder
+prefix: Xp_
+*/
+-- complete server version
+exec Xp_Msver
+
+-- for finding the storage sapce in the disks
+exec Xp_fixeddrives
+
+exec sp_indexes Indian_bank
+
+--CLR SP - Common language runtime - Dot.net
+
