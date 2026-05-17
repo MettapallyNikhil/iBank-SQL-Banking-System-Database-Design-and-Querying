@@ -242,6 +242,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Controlled execution flow using conditional return validation
 - Combined output parameters with procedural status handling
 
+### ✔ System Stored Procedures & Procedure Management
+- Explored SQL Server system stored procedures for database metadata analysis
+- Retrieved stored procedure definitions using built-in system utilities
+- Managed stored procedures using creation, alteration, and deletion operations
+- Investigated SQL Server environment and disk-level information
+
 ## 📊 SQL Interview Case Study – Customer Analytics
 ### ✔ Month-wise New Customer Acquisition
 - Identify new customers based on their first transaction  
