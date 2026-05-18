@@ -7,7 +7,9 @@ Select * from Account_master
 Select Acid,name,Status from Account_master
 
 --Some rows but all the columns
-Select * from Account_master where BRID='BR1' and Clearbalance < 5000
+Select * 
+from Account_master 
+where BRID='BR1' and Clearbalance < 5000
 
 --Some cols and some rows
 Select Acid,name,clearbalance from Account_master where Address = 'Hyd' or Address = 'Hyderabad'
@@ -931,3 +933,27 @@ exec sp_indexes Indian_bank
 
 --CLR SP - Common language runtime - Dot.net
 
+/*
+User defined functions (Calculations)
+select, update and delete --- we cant perform in UDF hence we are using functions
+We cant use temptables in functions, we use table variables
+Examples - creating automatic seat number in movie theatre
+Types:
+1. Scalar
+2. Multi Statement Table valued
+3. Inline functions - Parameterized view
+*/
+
+use indian_bank
+
+-- Function Syntax:
+create function Biryani
+(
+)
+Returns
+as 
+	begin
+		........
+		return
+	end
+go
