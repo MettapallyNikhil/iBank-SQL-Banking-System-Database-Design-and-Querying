@@ -236,6 +236,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Handled invalid account inputs gracefully
 - Combined procedural logic with output parameters for controlled execution
 
+## 🧮 User Defined Functions (UDF)
+- Explored reusable SQL logic using User Defined Functions (UDF)
+- Implemented modular calculation-oriented database functions
+- Learned differences between functions and stored procedures
+- Used parameterized function structures for reusable query logic
+
 ### ✔ Return Codes & Execution Status Handling
 - Implemented stored procedure return codes for execution status tracking
 - Returned custom status values for success and failure conditions
