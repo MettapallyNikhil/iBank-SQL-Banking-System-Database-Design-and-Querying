@@ -957,3 +957,79 @@ as
 		return
 	end
 go
+
+
+create function Fn_GetCustBalance
+(
+	@acid	int
+)
+Returns Money
+as 
+begin
+		Declare @x Money
+
+		select @x = clearbalance
+		from Account_master
+		where Acid = @acid
+		
+		return @x
+	end
+go
+
+--calling an function - we need to add dbo.functionname, then only it will execute
+select dbo.Fn_GetCustBalance(105)
+
+alter function Fn_GetCustBalance
+(
+	@acid	int
+)
+Returns Money
+as 
+begin
+		Declare @x Money
+
+		select @x = clearbalance
+		from Account_master
+		where Acid = @acid
+		
+		return isnull (@x,0)
+	end
+go
+
+--calling an function - we need to add dbo.functionname, then only it will execute
+select dbo.Fn_GetCustBalance(105)
+
+/*
+Use function to delete and the rows
+delete, update
+from Account_master
+where Clearbalance = dbo.Fn_GetCustBalance(105)
+*/
+
+--using vaiable
+declare @x Money
+set @x = dbo.Fn_GetCustBalance(105)
+print @x
+
+--insert
+insert into Account_master values (222, 'Acheiver', 'Deu', 'BR3', 'SB', getdate(), dbo.Fn_GetCustBalance(105), dbo.Fn_GetCustBalance(105), 'O')
+
+select * from Account_master
+
+--schema of Fn
+sp_helptext '[dbo].[Fn_GetCustBalance]'
+
+-- All Sp's
+select * from sys.procedures
+
+-- All Views
+select * from sys.views
+
+-- All informations
+select * from sys.objects
+
+-- All Pk's
+select * from sys.objects where type = 'PK'
+
+-- All Functions
+select * from sys.objects where type = 'Fn'
