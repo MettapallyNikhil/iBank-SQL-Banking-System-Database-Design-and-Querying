@@ -242,6 +242,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Learned differences between functions and stored procedures
 - Used parameterized function structures for reusable query logic
 
+### ✔ Scalar User Defined Functions
+- Created scalar user defined functions for reusable balance retrieval logic
+- Returned computed values dynamically using input parameters
+- Integrated functions within `SELECT`, `INSERT`, and conditional filtering operations
+- Handled NULL scenarios using `ISNULL()`
+
 ### ✔ Return Codes & Execution Status Handling
 - Implemented stored procedure return codes for execution status tracking
 - Returned custom status values for success and failure conditions
