@@ -248,6 +248,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Integrated functions within `SELECT`, `INSERT`, and conditional filtering operations
 - Handled NULL scenarios using `ISNULL()`
 
+### ✔ Inline & Table-Valued Functions
+- Implemented Inline Table-Valued Functions for parameterized data retrieval
+- Created reusable table-returning functions for branch-wise customer analysis
+- Developed Multi-Statement Table-Valued Functions using table variables
+- Returned structured datasets dynamically using function parameters
+
 ### ✔ Return Codes & Execution Status Handling
 - Implemented stored procedure return codes for execution status tracking
 - Returned custom status values for success and failure conditions
