@@ -1,4 +1,4 @@
- Use INDIAN_BANK
+Use INDIAN_BANK
 
 --All cols and All rows
 Select * from Account_master
@@ -1033,3 +1033,52 @@ select * from sys.objects where type = 'PK'
 
 -- All Functions
 select * from sys.objects where type = 'Fn'
+
+use Indian_bank
+
+-- All Check constraints
+select * from sys.objects where type = 'C'
+
+--Inline functions - Parameterised views
+create function Fn_GetBranchCustomers
+(
+		@brid		char(4)
+)
+Returns Table
+as
+return
+	(
+	select *
+	from Account_master
+	where brid = @brid
+	)
+go
+
+--while calling the Inline function use * from as we mentioned TABLE in the query
+select *
+from dbo.Fn_GetBranchCustomers('Br1')
+
+select *
+from Account_master
+where BRID= 'BR1'
+
+--Table values function
+create function Fn_Getcustomers
+(
+	@acid		int
+)
+returns @tmp	table(	Acid	int,
+						name	varchar(100),
+						Bal		Money
+					)
+As 
+begin
+		insert into @tmp (Acid, name, Bal)
+
+		select Acid, name, Bal
+		from Account_master
+		where Acid = @acid
+
+return
+
+end
