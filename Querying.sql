@@ -1082,3 +1082,38 @@ begin
 return
 
 end
+
+-- Interview Questions
+
+CREATE TABLE ProductVersions
+(
+    ProductNo INT,
+    VersionNo INT,
+    Amount INT
+)
+
+CREATE TABLE ProductInfo
+(
+    ProductNo	INT		not null,
+    VersionNo	INT		not null,	
+    Amount		INT		not null
+)
+
+insert into ProductInfo values (10,1,100),(10,2,120),(10,3,0),(10,4,0)
+insert into ProductInfo values (20,1,45),(20,2,0),(20,3,55),(20,4,78),(20,5,234)
+insert into ProductInfo values (30,1,120),(30,2,0)
+insert into ProductInfo values (40,1,0),(40,2,130),(40,3,0)
+insert into ProductInfo values (50,1,230),(50,2,345),(50,3,126)
+insert into ProductInfo values (60,1,0)
+insert into ProductInfo values (70,1,0),(70,2,0)
+
+select * from ProductInfo
+
+select *
+from (
+select ProductNo, VersionNo, Amount,
+		Rank() over(partition by productNo
+		order by VersionNo desc) Rno
+from ProductInfo
+	) K
+Where Rno = 1 and Amount = 0
