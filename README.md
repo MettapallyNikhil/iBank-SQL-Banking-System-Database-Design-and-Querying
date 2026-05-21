@@ -242,6 +242,11 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Learned differences between functions and stored procedures
 - Used parameterized function structures for reusable query logic
 
+### ✔ Latest Product Version Validation
+- Analyzed product version history using ranking functions
+- Identified products whose latest version contains invalid or zero amounts
+- Applied partition-based ranking for latest-record extraction
+
 ### ✔ Scalar User Defined Functions
 - Created scalar user defined functions for reusable balance retrieval logic
 - Returned computed values dynamically using input parameters
