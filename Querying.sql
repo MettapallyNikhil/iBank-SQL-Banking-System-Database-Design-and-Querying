@@ -1117,3 +1117,17 @@ select ProductNo, VersionNo, Amount,
 from ProductInfo
 	) K
 Where Rno = 1 and Amount = 0
+
+use Indian_bank
+
+/*
+TRIGGERS
+Need - to validatze the data
+Complex validations then Triggers ex: cst cannot withdraw more than 20k in a day. - in this as csts do multiple transactions then we need triggers
+simple things are performed by check constraints ex: like salary should not be 0, male of female etc
+*/
+
+select * from Account_master
+select * from Transaction_master
+
+
