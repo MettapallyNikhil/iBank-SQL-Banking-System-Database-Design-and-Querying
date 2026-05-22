@@ -236,6 +236,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Handled invalid account inputs gracefully
 - Combined procedural logic with output parameters for controlled execution
 
+## ⚡ Triggers & Automated Data Validation
+- Explored automated database validations using SQL Server Triggers
+- Implemented event-driven validation logic during data modifications
+- Learned differences between simple constraints and complex business validations
+- Understood trigger-based enforcement of transactional business rules
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
