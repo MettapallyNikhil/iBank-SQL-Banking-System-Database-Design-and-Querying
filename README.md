@@ -242,6 +242,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Learned differences between simple constraints and complex business validations
 - Understood trigger-based enforcement of transactional business rules
 
+### ✔ Trigger Types & Execution Flow
+- Explored SQL Server trigger execution lifecycle
+- Implemented automated validations during data modification events
+- Learned pre-processing and post-processing trigger workflows
+- Understood trigger-based business rule enforcement
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
