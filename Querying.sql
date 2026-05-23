@@ -1130,4 +1130,24 @@ simple things are performed by check constraints ex: like salary should not be 0
 select * from Account_master
 select * from Transaction_master
 
+/*
+Need of the triggers
+1. Pre Processing: Validations
+		Accounts	--		Closed
+		CW			---		Funds Availability
+2. Post Processing: Job
 
+		DML (insert, update and delete) Operations in same table/different tables
+Types - After (or) For
+		Instead Of
+*/
+
+-- Syntax
+create trigger <Trigger Name>
+on <TableName>
+<Type>  <inser,update,delete>
+as
+begin
+	--Code
+End
+Go
