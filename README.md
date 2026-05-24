@@ -248,6 +248,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Learned pre-processing and post-processing trigger workflows
 - Understood trigger-based business rule enforcement
 
+### ✔ Automated Transaction Processing using Triggers
+- Implemented automated balance update logic using SQL Server triggers
+- Applied business-rule validation during transaction processing
+- Updated account balances dynamically after transaction events
+- Performed account status validation before processing deposits and withdrawals
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
