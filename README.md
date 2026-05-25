@@ -254,6 +254,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Updated account balances dynamically after transaction events
 - Performed account status validation before processing deposits and withdrawals
 
+### ✔ Transaction Rollback & Trigger-Based Validation
+- Implemented trigger-based transaction rollback for invalid account operations
+- Prevented transactions on deactivated customer accounts
+- Enforced transactional integrity using automated rollback logic
+- Combined validation and balance synchronization within trigger workflows
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
