@@ -1201,5 +1201,47 @@ End
 select * from Account_master
 select * from Transaction_master where TransactionNumber > 51
 
+delete from Transaction_master where TransactionNumber = 53
+
 insert into Transaction_master values (getdate(), 101, 'Br2', 'CD', null, null,1520, 1 )
+insert into Transaction_master values (getdate(), 106, 'Br2', 'CD', null, null,1520, 1 )
+
+-- Rollback
+Alter trigger check_StatusAndUpdateStatus
+on Transaction_master
+after insert,update,delete
+as 
+begin
+
+declare @acid	int
+declare @type	char(3)
+declare @amt	money
+declare @status	char(1)
+
+--Get cst Info
+select @acid = Acid, @type = Transactiontype, @amt = TransactionAmount from inserted
+
+--Find out the status
+Select @status = status from Account_master where acid = @acid
+
+-- Open
+ if (@status = 'o')
+	begin
+			if (@type = 'CD')
+				begin	
+					update Account_master set Clearbalance = Clearbalance + @amt where acid = @acid
+				end
+			else
+				begin
+					update Account_master set Clearbalance = Clearbalance - @amt where acid = @acid
+				end
+	End
+else
+	begin
+		print 'Your Account is De-Activated. Please call CC'
+		print 'Txn is declined'
+		Rollback
+	end
+End
+
 insert into Transaction_master values (getdate(), 106, 'Br2', 'CD', null, null,1520, 1 )
