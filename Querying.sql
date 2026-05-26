@@ -1245,3 +1245,60 @@ else
 End
 
 insert into Transaction_master values (getdate(), 106, 'Br2', 'CD', null, null,1520, 1 )
+
+Use Indian_bank
+
+--validation for the sufficient bal
+
+Alter trigger check_StatusAndUpdateStatus
+on Transaction_master
+after insert,update,delete
+as 
+begin
+
+declare @acid	int
+declare @type	char(3)
+declare @amt	money
+declare @status	char(1)
+declare @bal	money
+
+--Get cst Info
+select @acid = Acid, @type = Transactiontype, @amt = TransactionAmount from inserted
+
+--Find out the status
+Select @status = status from Account_master where acid = @acid
+
+-- Open
+ if (@status = 'o')
+	begin
+			if (@type = 'CD')
+				begin	
+					update Account_master set Clearbalance = Clearbalance + @amt where acid = @acid
+				end
+			else
+				begin
+
+				--check the balance
+				select @bal = Clearbalance from Account_master where acid= @acid
+
+				if (@amt <= @bal)
+					update Account_master set Clearbalance = Clearbalance - @amt where acid = @acid
+				else
+					begin
+						print 'Insufficient funds in your konto'
+						print 'Txn is declined'
+						Rollback
+				end
+			end
+	End
+else
+	begin
+		print 'Your Account is De-Activated. Please call CC'
+		print 'Txn is declined'
+		Rollback
+	end
+End
+
+
+select * from Account_master
+insert into Transaction_master values (getdate(), 101, 'Br2', 'Cw', null, null,20, 1 )
