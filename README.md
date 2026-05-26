@@ -260,6 +260,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Enforced transactional integrity using automated rollback logic
 - Combined validation and balance synchronization within trigger workflows
 
+### ✔ Fund Validation & Transaction Authorization
+- Implemented trigger-based balance validation for withdrawal transactions
+- Prevented transactions with insufficient account balance
+- Enforced transactional authorization using automated rollback logic
+- Combined account status checks with balance verification workflows
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
