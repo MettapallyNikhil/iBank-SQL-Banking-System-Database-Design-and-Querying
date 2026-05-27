@@ -1249,7 +1249,6 @@ insert into Transaction_master values (getdate(), 106, 'Br2', 'CD', null, null,1
 Use Indian_bank
 
 --validation for the sufficient bal
-
 Alter trigger check_StatusAndUpdateStatus
 on Transaction_master
 after insert,update,delete
@@ -1301,4 +1300,50 @@ End
 
 
 select * from Account_master
-insert into Transaction_master values (getdate(), 101, 'Br2', 'Cw', null, null,20, 1 )
+insert into Transaction_master values (getdate(), 101, 'Br2', 'CD', null, null,20, 1 )
+insert into Transaction_master values (getdate(), 106, 'Br2', 'Cw', null, null,20, 1 )
+
+Use INDIAN_BANK
+
+-- InsteadOf Trigger -- PRE TRIGGER -- when bank gave that the condition: if the amnt is more than 50k, we should not process the Txn
+create trigger High_Volumn_Txns
+on Transaction_master
+Instead of Insert, Update, Delete
+as begin
+
+	declare @Dateoftransaction	datetime
+	declare	@Acid				int
+	declare	@Brid				char(3)
+	declare	@Transactiontype	char(3)
+	declare	@ChqNo				int
+	declare	@ChqDate			smalldatetime
+	declare	@TransactionAmount	money
+	declare	@UserId				int
+
+-- get the customer info
+	select @Dateoftransaction = [Dateoftransaction],@Acid = [Acid],@Brid=[Brid],@Transactiontype = [Transactiontype],@ChqNo=[ChqNo], 
+			@ChqDate=[ChqDate],@TransactionAmount=[TransactionAmount],@UserId=[UserId]
+	from inserted
+-- Condition
+if (@TransactionAmount > 50000)
+	insert into HTM values (@Dateoftransaction,@Acid,@Brid,@Transactiontype,@ChqNo, 
+			@ChqDate,@TransactionAmount,@UserId)
+else 
+	insert into Transaction_master values (@Dateoftransaction,@Acid,@Brid,@Transactiontype,@ChqNo, 
+			@ChqDate,@TransactionAmount,@UserId)
+end
+
+-- creating an table with already defined datatypes
+select * into HTM from Transaction_master where 1 = 2
+
+select * from Transaction_master
+select * from HTM
+
+insert into Transaction_master values (getdate(), 101, 'Br2', 'CD', null, null,20000000, 1 )
+
+-- drop trigger
+drop trigger <Triggername>
+
+-- We can also disable the triggers and check constraints
+alter table <Tablename>
+enable/disable trigger <triggername>
