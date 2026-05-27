@@ -266,6 +266,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Enforced transactional authorization using automated rollback logic
 - Combined account status checks with balance verification workflows
 
+### ✔ INSTEAD OF Triggers & High-Value Transaction Routing
+- Implemented `INSTEAD OF` triggers for pre-processing transaction validation
+- Intercepted high-value banking transactions before insertion
+- Redirected large-volume transactions into a separate monitoring table
+- Applied trigger-based transaction routing and segregation workflows
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
