@@ -1347,3 +1347,20 @@ drop trigger <Triggername>
 -- We can also disable the triggers and check constraints
 alter table <Tablename>
 enable/disable trigger <triggername>
+
+/*
+CURSORS	
+Need		-	can update the data
+Types		-	Server side
+Direction	-	Forward, Scrollable, Fastforward
+Visibility	-	Static, key set driven, Dynamic
+*/
+
+SELECT * from Account_master where Acid = 101
+-- in the above query we can only view the data, but cant edit..
+-- in cursors we can edit the data
+
+--Cursor
+
+
+
