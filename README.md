@@ -272,6 +272,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Redirected large-volume transactions into a separate monitoring table
 - Applied trigger-based transaction routing and segregation workflows
 
+## 🔄 Cursors & Row-by-Row Processing
+- Explored row-by-row data processing using SQL Server cursors
+- Learned procedural record traversal techniques
+- Understood cursor-based data navigation and update workflows
+- Compared cursor-based processing with standard set-based queries
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
