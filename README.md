@@ -278,6 +278,13 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Understood cursor-based data navigation and update workflows
 - Compared cursor-based processing with standard set-based queries
 
+### ✔ Cursor Lifecycle & Navigation
+- Declared a cursor on a query result set
+- Opened the cursor for processing
+- Retrieved records using `FETCH NEXT`
+- Controlled iteration using `@@FETCH_STATUS`
+- Closed and deallocated cursor resources
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
