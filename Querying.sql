@@ -1360,7 +1360,17 @@ SELECT * from Account_master where Acid = 101
 -- in the above query we can only view the data, but cant edit..
 -- in cursors we can edit the data
 
---Cursor
+--Cursor Syntax
+declare Abc cursor for
 
+select * from Account_master 
 
+open Abc 
+fetch next from Abc
+
+while @@FETCH_STATUS=0
+fetch next from Abc
+
+close Abc
+deallocate Abc
 
