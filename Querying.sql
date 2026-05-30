@@ -1362,7 +1362,6 @@ SELECT * from Account_master where Acid = 101
 
 --Cursor Syntax
 declare Abc cursor for
-
 select * from Account_master 
 
 open Abc 
@@ -1374,3 +1373,27 @@ fetch next from Abc
 close Abc
 deallocate Abc
 
+--Scrolling cursor
+Declare ABCD cursor Scroll
+for
+select * from Account_master
+
+open ABCD
+
+--Fetch the last row in the cursor
+Fetch last from ABCD
+
+--Fetch the row immediately prior to the current row in the cursor
+Fetch prior from ABCD
+
+--Fetch the Second row in the cursor
+Fetch Absolute 2 from ABCD
+
+--Fetch the row that is 3 rows after the current row
+Fetch Relative 3 from ABCD
+
+--Fetch the row that is 2 rows prior to the current row
+Fetch Relative -2 from ABCD
+
+Close ABCD
+deallocate ABCD
