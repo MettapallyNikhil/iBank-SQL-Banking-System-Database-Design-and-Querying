@@ -285,6 +285,14 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Controlled iteration using `@@FETCH_STATUS`
 - Closed and deallocated cursor resources
 
+### ✔ Scrollable Cursors
+Implemented scrollable cursor navigation techniques for moving across records in different directions without processing rows sequentially.
+📌 Cursor Navigation Operations:
+- `FETCH LAST` – Retrieves the last row in the result set
+- `FETCH PRIOR` – Retrieves the row immediately before the current row
+- `FETCH ABSOLUTE n` – Retrieves the specific row position
+- `FETCH RELATIVE n` – Moves forward or backward relative to the current position
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
