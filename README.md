@@ -293,6 +293,14 @@ Implemented scrollable cursor navigation techniques for moving across records in
 - `FETCH ABSOLUTE n` – Retrieves the specific row position
 - `FETCH RELATIVE n` – Moves forward or backward relative to the current position
 
+### ✔ Cursor Status Monitoring
+Explored cursor state validation using SQL Server's built-in `CURSOR_STATUS()` function.
+📌 Cursor Status Validation:
+- Monitor cursor lifecycle state
+- Verify cursor availability before processing
+- Improve cursor management and debugging
+
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
