@@ -1374,8 +1374,7 @@ close Abc
 deallocate Abc
 
 --Scrolling cursor
-Declare ABCD cursor Scroll
-for
+Declare ABCD cursor Scroll for
 select * from Account_master
 
 open ABCD
@@ -1397,3 +1396,9 @@ Fetch Relative -2 from ABCD
 
 Close ABCD
 deallocate ABCD
+
+-- To know the Cursor open/close state -- it should be in the same window to execute
+If CURSOR_STATUS('global', 'ABCD') >=-1
+Begin 
+	print 'The Above cursor is in Open State'
+End
