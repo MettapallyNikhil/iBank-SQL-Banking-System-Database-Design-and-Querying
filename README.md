@@ -300,6 +300,14 @@ Explored cursor state validation using SQL Server's built-in `CURSOR_STATUS()` f
 - Verify cursor availability before processing
 - Improve cursor management and debugging
 
+## ✔ Static Cursors
+Explored Static Cursors in SQL Server for read-only snapshot-based data access.
+📌 Static Cursor Characteristics:
+- Creates a snapshot of the result set when the cursor is opened
+- Does not reflect subsequent changes made to the underlying table
+- Primarily used for read-only operations
+- Provides predictable and stable cursor navigation
+
 
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
