@@ -1402,3 +1402,32 @@ If CURSOR_STATUS('global', 'ABCD') >=-1
 Begin 
 	print 'The Above cursor is in Open State'
 End
+
+-- Static Cursor - Read Only
+declare Abc cursor Forward_only Static 
+for
+select * 
+from Account_master 
+
+open Abc 
+fetch next from Abc
+
+while @@FETCH_STATUS=0
+fetch next from Abc
+
+close Abc
+deallocate Abc
+
+-- Static with Scroll
+declare Abc cursor Scroll Static 
+for
+select * 
+from Account_master 
+
+open Abc 
+fetch next from Abc
+
+fetch Last from Abc
+
+close Abc
+deallocate Abc
