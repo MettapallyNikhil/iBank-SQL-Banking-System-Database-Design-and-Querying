@@ -308,6 +308,14 @@ Explored Static Cursors in SQL Server for read-only snapshot-based data access.
 - Primarily used for read-only operations
 - Provides predictable and stable cursor navigation
 
+### ✔ Keyset-Driven Cursors
+Explored Keyset-Driven Cursors in SQL Server for efficient cursor navigation with reduced memory consumption.
+📌 Keyset Cursor Characteristics:
+- Stores only key values in `tempdb`
+- Uses less storage compared to Static Cursors
+- Supports scrollable navigation
+- Can detect updates made to existing rows
+- Does not display newly inserted rows by other users after the cursor is opened
 
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
