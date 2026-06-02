@@ -1431,3 +1431,22 @@ fetch Last from Abc
 
 close Abc
 deallocate Abc
+
+--STATIC WITH UPDATE -- we cant update using the static cursor - Its only Read only
+
+-- KEYSET-DRIVEN CURSORS
+-- Only the key columns are copied in the tempdb and it uses less space
+-- Insertions by others we cant see
+declare Abc cursor Scroll Keyset 
+for
+select * 
+from Account_master 
+
+open Abc 
+fetch next from Abc
+
+While @@FETCH_STATUS=0
+fetch Next from Abc
+
+close Abc
+deallocate Abc
