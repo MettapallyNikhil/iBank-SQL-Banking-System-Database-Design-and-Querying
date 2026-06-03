@@ -317,6 +317,14 @@ Explored Keyset-Driven Cursors in SQL Server for efficient cursor navigation wit
 - Can detect updates made to existing rows
 - Does not display newly inserted rows by other users after the cursor is opened
 
+### ✔ Dynamic Cursors
+Explored Dynamic Cursors in SQL Server for real-time access to changing datasets.
+📌 Dynamic Cursor Characteristics:
+- Reflects changes made to the underlying data while the cursor is open
+- Does not create a complete snapshot of the result set
+- Supports row updates and deletions through cursor positioning
+- Suitable for highly dynamic datasets requiring real-time visibility
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
