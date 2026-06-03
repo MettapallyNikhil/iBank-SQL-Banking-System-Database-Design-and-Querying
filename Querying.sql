@@ -1450,3 +1450,32 @@ fetch Next from Abc
 
 close Abc
 deallocate Abc
+
+--DYNAMIC Cursors:
+-- No tempDB space and very costly
+-- Faster than all the cursors
+declare Abc cursor Dynamic 
+for
+select * 
+from Account_master 
+
+open Abc 
+fetch next from Abc
+
+Fetch prior from ABC
+
+Update Account_master
+set Name = 'Nikhil Mettapally'
+where current of Abc
+
+Delete from Account_master
+where current of Abc
+
+close Abc
+deallocate Abc
+
+-- We cant Insert the data using CURSORS, we can update, delete and view the data
+-- Cursors are important for looping the data
+-- cant use the cursors on 1 Gb data and bigger
+-- they are performance wise bad
+-- only for small amount of data.
