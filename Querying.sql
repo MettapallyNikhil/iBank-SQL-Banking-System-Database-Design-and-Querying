@@ -1479,3 +1479,21 @@ deallocate Abc
 -- cant use the cursors on 1 Gb data and bigger
 -- they are performance wise bad
 -- only for small amount of data.
+
+-- Linked Server/Remote Server
+-- When we want to get the data from the other Database without choosing the other one
+use INDIAN_BANK
+
+select * from Acheiver.[dbo].[Example]
+
+--or
+
+select * from Acheiver..[Example]
+
+select * from [School]..[CourseMaster]
+
+-- we can only put .. when we have 'dbo'
+-- Why schemas?
+-- to provide the security to the tables
+-- we can separate the tables to access
+-- we can give logins to the new users
