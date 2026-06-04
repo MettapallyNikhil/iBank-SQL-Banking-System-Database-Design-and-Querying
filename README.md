@@ -325,6 +325,26 @@ Explored Dynamic Cursors in SQL Server for real-time access to changing datasets
 - Supports row updates and deletions through cursor positioning
 - Suitable for highly dynamic datasets requiring real-time visibility
 
+## 🌐 Cross-Database Queries & Schemas
+Explored querying data across multiple databases without switching the active database context.
+### ✔ Cross-Database Querying
+Implemented queries to retrieve data from tables located in other databases using fully qualified object names.
+📌 Query Formats Practiced:
+- Database.Schema.Table
+- Database..Table (default dbo schema)
+Examples:
+- Accessing tables from another database
+- Retrieving data without changing database context
+- Working with multiple databases in a single query
+### ✔ SQL Server Schemas
+Explored the purpose and usage of schemas in SQL Server.
+📌 Benefits of Schemas:
+- Logical organization of database objects
+- Security and access control
+- Separation of business domains
+- Easier permission management
+- Role-based table access
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
