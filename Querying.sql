@@ -1497,3 +1497,18 @@ select * from [School]..[CourseMaster]
 -- to provide the security to the tables
 -- we can separate the tables to access
 -- we can give logins to the new users
+-- Read the data from another db: within server
+Select * from dbname.schema.tablename
+
+/*
+LINKED SERVER:
+when one server is in India and one in USA we need to use LS
+SYNTAX: another server
+Select *
+from Servername.DBName.Schemaname.Tablename
+*/
+
+/*
+Creating an Linked Server:
+Go to Linked Servers on the left panel and create it
+*/
