@@ -345,6 +345,15 @@ Explored the purpose and usage of schemas in SQL Server.
 - Easier permission management
 - Role-based table access
 
+🔗 Linked Servers in SQL Server
+📌 What is a Linked Server?
+A Linked Server enables SQL Server to execute commands and retrieve data from another SQL Server instance or external data source.
+🎯 Purpose
+Access data from remote SQL Server instances.
+Perform cross-server queries.
+Integrate data from multiple servers.
+Simplify reporting across distributed databases.
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
