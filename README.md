@@ -395,6 +395,19 @@ Simplify reporting across distributed databases.
 - Calculate number of new customers acquired each month  
 - Aggregate results month-wise  
 
+##Interview Questions
+Find all accounts that share the same ClearBalance value with at least one other account.
+SELECT Acid, Name, ClearBalance
+FROM Account_master
+WHERE ClearBalance IN
+(
+    SELECT ClearBalance
+    FROM Account_master
+    GROUP BY ClearBalance
+    HAVING COUNT(*) > 1
+)
+ORDER BY ClearBalance;
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
 - Implementing multi-table relationships  
