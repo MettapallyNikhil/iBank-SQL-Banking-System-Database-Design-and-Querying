@@ -1512,3 +1512,18 @@ from Servername.DBName.Schemaname.Tablename
 Creating an Linked Server:
 Go to Linked Servers on the left panel and create it
 */
+
+Select * from Account_master
+
+-- How can i find out the same clearbalance of the Acid's
+
+SELECT Acid, Name, ClearBalance
+FROM Account_master
+WHERE ClearBalance IN
+(
+    SELECT ClearBalance
+    FROM Account_master
+    GROUP BY ClearBalance
+    HAVING COUNT(*) > 1
+)
+ORDER BY ClearBalance;
