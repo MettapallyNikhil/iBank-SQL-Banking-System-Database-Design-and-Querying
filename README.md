@@ -354,6 +354,21 @@ Perform cross-server queries.
 Integrate data from multiple servers.
 Simplify reporting across distributed databases.
 
+### ✔ Views for Data Abstraction & Reusability
+* Created reusable virtual tables using SQL Server Views
+* Centralized frequently used query logic for application access
+* Simplified data retrieval without exposing underlying table complexity
+* Improved code maintainability and query reusability
+
+```sql
+CREATE VIEW vw_getmybalance
+AS
+SELECT *
+FROM Account_master
+WHERE Acid = 122;
+```
+
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
