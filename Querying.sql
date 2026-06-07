@@ -1527,3 +1527,23 @@ WHERE ClearBalance IN
     HAVING COUNT(*) > 1
 )
 ORDER BY ClearBalance;
+
+/*
+All languages and Client apps or Front end Apps are developed by Python, Java, Angular JS-...
+Oracle, SQL server and My SQl these are backened as databse apps....
+1 server many clients
+EX: in Amazon website when we search for the shirts, we write the query in the front end and 
+the query runs in backened
+To centralise the code:
+1. View
+2. SP
+3. Functions
+*/
+
+-- Creating a View
+create view vw_getmybalance
+as
+select * 
+from Account_master
+where acid = 122
+
