@@ -368,6 +368,11 @@ FROM Account_master
 WHERE Acid = 122;
 ```
 
+### ✔ Business Reporting using Views
+* Used views to expose required data without granting direct table access
+* Implemented customer activity analysis through reusable view-based queries
+* Identified customers with no transactions in the last six months
+* Simplified reporting logic for front-end applications and users
 
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
