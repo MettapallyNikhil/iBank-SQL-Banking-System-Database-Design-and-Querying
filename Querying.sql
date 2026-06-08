@@ -1547,3 +1547,21 @@ select *
 from Account_master
 where acid = 122
 
+-- to centralise the data - Tables
+-- We shouldnt give the data to client aplication, we need to give the View, so that the data wont be exposed.
+-- The middlesmens are created and between the client and database, the MM are View, SP, function
+
+-- persons who did not do the Txns for the last 6 months
+
+Select Acid 
+from Account_master
+where acid not in	(
+					Select distinct acid
+					from Transaction_master 
+					where datediff(mm, Dateoftransaction, GETDATE()) <=6
+					)
+-- we cant only write one query in view and not an update statements
+
+--Calling a view
+Select * from vw_getmybalance
+-- if we need to implement more than 1, we need to use SP's
