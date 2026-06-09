@@ -224,6 +224,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Implemented input parameter handling for dynamic query execution
 - Retrieved account balance information using parameterized procedures
 
+✔ Status Management using Stored Procedures
+Created stored procedures to execute multiple SQL statements as a single program
+Automated inactive account identification based on transaction history
+Updated account status using centralized business logic
+Improved maintainability through reusable procedural code
+
+✔ View Management & Metadata Analysis
+Retrieved view definitions using SQL Server system procedures
+Modified existing views using ALTER VIEW
+Explored database metadata through system catalog views
+Analyzed database objects including tables and views
+
 ### ✔ Output Parameters & Procedure Alteration
 - Implemented stored procedures with both input and output parameters
 - Retrieved dynamic values from database tables using output variables
