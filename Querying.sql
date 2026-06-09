@@ -1565,3 +1565,37 @@ where acid not in	(
 --Calling a view
 Select * from vw_getmybalance
 -- if we need to implement more than 1, we need to use SP's
+-- Multiple queries in single program - Use SP's
+-- Creating an SP
+create proc	usp_update_status
+as
+begin
+	update Account_master
+	set status = 'I'
+	where acid in	(
+					Select Acid 
+					from Account_master
+					where acid not in	(
+										Select distinct acid
+										from Transaction_master 
+										where datediff(mm, Dateoftransaction, GETDATE()) <=6
+										)
+					)
+end
+
+select * from vw_getmybalance
+
+-- see the code
+sp_helptext 'vw_getmybalance'
+
+-- altering the view
+alter view vw_getmybalance  
+as  
+select *   
+from Account_master  
+where acid = 123
+
+-- get all the view names
+select count(*) from sys.tables
+select count(*) from sys.views
+--Views and functions can be used for joins
