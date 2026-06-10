@@ -386,6 +386,12 @@ WHERE Acid = 122;
 * Identified customers with no transactions in the last six months
 * Simplified reporting logic for front-end applications and users
 
+### ✔ View Limitations & Dynamic Data Retrieval
+* Explored practical limitations of SQL Server Views
+* Created branch-specific views for filtered customer access
+* Verified that views always display the latest table data
+* Demonstrated data abstraction without physical data storage
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
