@@ -29,8 +29,7 @@ from Account_master
 Select acid, name, *
 from Account_master
 
-Select 5 as [Myluckynumber] from Account_master
-
+ 
 Select *,'Nikhil' from Account_master
 
 -- We can print columns and constants
@@ -1599,3 +1598,27 @@ where acid = 123
 select count(*) from sys.tables
 select count(*) from sys.views
 --Views and functions can be used for joins
+
+/* 
+Limitations of VIEWS:
+One single query is allowed
+views are slow
+no programming
+no insert/update/delete
+no parameters
+it gets fresh data
+*/
+
+select * from vw_getmybalance
+
+create view get_cstdata_br1
+as 
+select *
+from Account_master
+where brid = 'Br1'
+
+select * from get_cstdata_br1
+
+-- if we update the data the data in the views will also gets updated
+-- View wont be storing the data anywhere,it is just like an another query
+
