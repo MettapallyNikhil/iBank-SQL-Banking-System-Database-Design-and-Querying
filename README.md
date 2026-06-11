@@ -392,6 +392,24 @@ WHERE Acid = 122;
 * Verified that views always display the latest table data
 * Demonstrated data abstraction without physical data storage
 
+### ✔ Updatable and Non-Updatable Views
+* Explored read-only and read-write view behavior in SQL Server
+* Created non-updatable views for restricted data access
+* Performed INSERT and UPDATE operations through updatable views
+* Analyzed view modification capabilities and data consistency
+
+📌 Non-Updatable Views:
+* Typically used for read-only data access
+* Often contain aggregated or derived data
+* Cannot always support direct INSERT or UPDATE operations
+* Used for reporting and analytical purposes
+
+📌 Updatable Views:
+* Support direct INSERT operations
+* Support UPDATE operations on underlying tables
+* Reflect changes in source tables automatically
+* Used to simplify controlled data modifications
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
