@@ -1622,3 +1622,29 @@ select * from get_cstdata_br1
 -- if we update the data the data in the views will also gets updated
 -- View wont be storing the data anywhere,it is just like an another query
 
+/*
+View is an Virtual Table
+Types of Views:
+updatable Views(Read/Write) 
+Non-updatable views(Read Only) 
+*/
+
+Use INDIAN_BANK
+
+-- Non updatable views - and when we have the aggreagate functions also.
+create view Name_CB
+as
+select Name, Clearbalance from Account_master
+
+Select * from Name_CB
+
+Insert into Name_CB values (200, 'Amaira', 'Regensburg', 'BR2', 'SB', getdate(), 13156, 54574, 'O')
+
+-- Updatable Views
+select * from get_cstdata_br1
+
+Insert into get_cstdata_br1 values (199, 'Amaira', 'Regensburg', 'BR2', 'SB', getdate(), 13156, 54574, 'O')
+
+update get_cstdata_br1
+set Clearbalance = 45645
+where Acid = 107
