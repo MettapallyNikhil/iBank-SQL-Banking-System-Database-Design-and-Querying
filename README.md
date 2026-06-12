@@ -410,6 +410,41 @@ WHERE Acid = 122;
 * Reflect changes in source tables automatically
 * Used to simplify controlled data modifications
 
+### ✔ Advanced View Operations & View Security
+
+* Created views for time-based transaction analysis and customer segmentation
+* Performed joins between views and base tables for integrated reporting
+* Built hierarchical views by creating views on top of existing views
+* Implemented view security using `SCHEMABINDING` concepts and `ENCRYPTION`
+
+📌 View-Based Analytics:
+
+* Created views for current-year transaction reporting
+* Filtered data using date-based conditions (`DATEDIFF`)
+* Built product-specific customer views (FD, SB, etc.)
+* Created branch-wise customer segmentation views
+
+📌 View Relationships & Joins:
+
+* Joined views with tables for consolidated reporting
+* Created views based on other views
+* Supported multi-level view architecture
+* Simplified complex business queries
+
+📌 View Dependencies:
+
+* Dependent views fail if parent views are removed
+* Schema modifications can impact views, procedures, and functions
+* Object naming consistency is critical for maintainability
+* Dependency management is essential in production systems
+
+📌 View Security Features:
+
+* `WITH ENCRYPTION` hides view source code
+* `SP_HELPTEXT` cannot display encrypted view definitions
+* `SCHEMABINDING` prevents structural table modifications
+* Improves protection of business logic and database objects
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
