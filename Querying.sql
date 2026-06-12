@@ -1648,3 +1648,67 @@ Insert into get_cstdata_br1 values (199, 'Amaira', 'Regensburg', 'BR2', 'SB', ge
 update get_cstdata_br1
 set Clearbalance = 45645
 where Acid = 107
+
+-- View is also an Virtual table
+
+select * from Account_master
+
+-- creating a view for the current year transactions
+create view vw_current_year_txns as
+-- current year
+select * from Transaction_master where DATEDIFF(yy, Dateoftransaction, GETDATE()) = 0
+
+-- last 2 quarters
+select * from Transaction_master where DATEDIFF(qq, Dateoftransaction, GETDATE()) = 2
+
+select * from vw_current_year_txns
+
+-- joining a view and a table
+select * 
+from vw_current_year_txns as a join Account_master as b
+on a.Acid = b.Acid
+
+-- create a view with FD custs
+create view vw_GetFdCustomers
+as 
+select * from Account_master
+where Pid = 'FD'
+
+-- create view on another view
+create view vw_GetBR1FdCustomers
+as
+select * from vw_GetFdCustomers
+where BRID = 'BR1'
+
+select * from vw_GetFdCustomers
+select * from vw_GetBR1FdCustomers
+
+/*
+WE CAN JOIN THE BELOW:
+tables	-- tables 
+tables	-- views
+views	-- tables
+view	-- view	-- table 
+tables	-- udfs
+udf		-- tables
+view	-- udfs
+udfs	-- views, tables
+udfs	-- udfs
+
+WE CANNOT JOIN THE BELOW:
+SP cannot ve joined with tables, views, functions
+
+if we create a view based on other view, if we drop the 1st one, we cant execute the 2nd one
+when schema changes the views, SP's and functions wont work
+NEVER CHANGE THE NAMES OF THE TABLES
+When we use SCHEMABINDING, no one can modify the table and we need to include the SCHEMA
+When we use ENCRYPTION, no one can view the syntax of the query
+*/
+
+create view vw_sb_customers
+with encryption
+as
+select * from Account_master
+where PID = 'SB'
+
+sp_helptext vw_sb_customers
