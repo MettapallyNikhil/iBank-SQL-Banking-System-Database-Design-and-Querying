@@ -1712,3 +1712,17 @@ select * from Account_master
 where PID = 'SB'
 
 sp_helptext vw_sb_customers
+
+-- code is called the schema
+-- to provide more security to end users and also to group and give to different dept users
+
+create schema sales
+
+create table sales.Emp
+(
+EID			int			not null		primary key,
+NAME		varchar(10)	not null,
+MID			int			null			
+)
+
+drop schema sales
