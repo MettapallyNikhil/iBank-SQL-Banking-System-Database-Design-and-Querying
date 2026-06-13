@@ -348,6 +348,7 @@ Examples:
 - Accessing tables from another database
 - Retrieving data without changing database context
 - Working with multiple databases in a single query
+
 ### ✔ SQL Server Schemas
 Explored the purpose and usage of schemas in SQL Server.
 📌 Benefits of Schemas:
@@ -356,6 +357,18 @@ Explored the purpose and usage of schemas in SQL Server.
 - Separation of business domains
 - Easier permission management
 - Role-based table access
+
+### ✔ Schema Creation & Object Organization
+* Created custom schemas to logically organize database objects
+* Implemented schema-based table creation for departmental segregation
+* Improved security through schema-level object grouping
+* Managed schema lifecycle using creation and deletion operations
+
+📌 Schema Benefits:
+* Logical separation of database objects
+* Department-wise data organization
+* Simplified permission management
+* Enhanced database security and maintainability
 
 🔗 Linked Servers in SQL Server
 📌 What is a Linked Server?
