@@ -1726,3 +1726,19 @@ MID			int			null
 )
 
 drop schema sales
+
+-- if we want to give some permission to specific persons we need schemas
+-- Views with Check Option
+-- we cant modify the view data using Check option
+
+create view Hyd_Employees
+as
+select * from Account_master
+where Address = 'Hyderabad'
+with check option
+
+select * from Hyd_Employees
+
+update Hyd_Employees
+set Address = 'Pune'
+where acid = 140
