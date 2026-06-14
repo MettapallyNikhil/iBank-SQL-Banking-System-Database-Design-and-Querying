@@ -458,6 +458,19 @@ WHERE Acid = 122;
 * `SCHEMABINDING` prevents structural table modifications
 * Improves protection of business logic and database objects
 
+### ✔ Views with CHECK OPTION
+
+* Implemented views with `WITH CHECK OPTION` to enforce view conditions
+* Restricted updates that would move rows outside the view definition
+* Preserved data consistency through view-level validation
+* Prevented unauthorized modifications violating view filters
+
+📌 CHECK OPTION Behavior:
+* Ensures modified rows continue to satisfy the view condition
+* Blocks updates that make records disappear from the view
+* Enforces business rules at the view level
+* Improves data integrity for filtered datasets
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
