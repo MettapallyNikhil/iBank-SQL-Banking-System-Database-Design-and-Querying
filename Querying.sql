@@ -1742,3 +1742,22 @@ select * from Hyd_Employees
 update Hyd_Employees
 set Address = 'Pune'
 where acid = 140
+
+/*
+MATERIALISED AND INDEXED VIEWS
+INDEXED VIEWS: The queries are cached in RAM, no need to run the entire query all the time.
+need to create with Schema binding
+*/
+
+CREATE VIEW vw_BranchBalanceSummary
+WITH SCHEMABINDING
+AS
+SELECT
+    Brid,
+    COUNT_BIG(*) AS TotalAccounts,
+    SUM(ClearBalance) AS TotalBalance
+FROM dbo.Account_master
+GROUP BY Brid;
+GO
+
+select * from vw_BranchBalanceSummary
