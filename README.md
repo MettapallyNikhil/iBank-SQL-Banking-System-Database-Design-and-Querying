@@ -471,6 +471,12 @@ WHERE Acid = 122;
 * Enforces business rules at the view level
 * Improves data integrity for filtered datasets
 
+### ✔ Indexed Views for Performance Optimization
+* Created indexed views using `SCHEMABINDING`
+* Performed branch-wise aggregation on customer balances
+* Generated precomputed summary datasets for reporting
+* Improved performance for frequently executed analytical queries
+
 ## 🧮 User Defined Functions (UDF)
 - Explored reusable SQL logic using User Defined Functions (UDF)
 - Implemented modular calculation-oriented database functions
