@@ -205,6 +205,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Deleted obsolete records missing from source tables
 - Compared source and target datasets dynamically
 
+### ✔ T-SQL Variables & Memory Management
+* Implemented local variables for temporary data storage during program execution
+* Stored and transferred values within T-SQL programs using variables
+* Explored variable declaration, assignment, and retrieval operations
+* Learned memory-based processing without permanent database storage
+
 ## ⚙️ Stored Procedures & Programmable SQL
 📌 Features:
 - Supports input and output parameters
