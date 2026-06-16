@@ -1761,3 +1761,35 @@ GROUP BY Brid;
 GO
 
 select * from vw_BranchBalanceSummary
+
+use Indian_bank
+
+/*
+SQL		- DDL, DML, TCL, DCL commands
+T-SQL	- Variables, If...Else, Loops, Try catch blocks
+1. VARIABLES
+- Purpose: To store the data in Ram and move the data from one place to another.
+- Variables are declared in the memory/Ram, but not in SQL server/HDD
+- There are 2 types of variables
+-- LOCAL VARIABLES:
+- They are created using '@' Symbol
+- Removed when the connection is closed
+- Whoever created them, they can only use, not others
+
+SYNTAX
+Declare		@<Variable Name>	<Data Type>
+
+Ex: Declare @Salary INT
+- @Salary is a variable, which is capable of storing an Integer
+- variable can store only an single value
+
+Declare
+declare @x smallint
+
+store
+set @x = -1000
+
+read
+print = -x
+
+******************************************/
