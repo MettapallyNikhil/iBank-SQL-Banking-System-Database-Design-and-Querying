@@ -1791,5 +1791,18 @@ set @x = -1000
 
 read
 print = -x
-
+or
+select = x
 ******************************************/
+
+-- T SQL Programming
+declare @x int
+declare @y int
+declare @z  int
+
+set @y = 30
+set @x = 10
+set @z = 60
+
+-- set @z = @x + @y
+print @x + @y + @z
