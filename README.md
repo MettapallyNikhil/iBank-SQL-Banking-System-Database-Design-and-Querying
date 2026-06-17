@@ -211,6 +211,12 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Explored variable declaration, assignment, and retrieval operations
 * Learned memory-based processing without permanent database storage
 
+### ✔ Variable Assignment & Arithmetic Operations
+* Declared multiple local variables for data processing
+* Assigned values using the `SET` statement
+* Performed arithmetic calculations using variables
+* Displayed computed results using the `PRINT` statement
+
 ## ⚙️ Stored Procedures & Programmable SQL
 📌 Features:
 - Supports input and output parameters
