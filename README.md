@@ -217,6 +217,19 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Performed arithmetic calculations using variables
 * Displayed computed results using the `PRINT` statement
 
+### ✔ Variable Output & T-SQL Program Structure
+* Displayed variable values using both `PRINT` and `SELECT` statements
+* Converted numeric data to string format using `CAST()`
+* Explored differences between message output and result-set output
+* Learned the basic structure of Stored Procedures combining SQL and T-SQL
+
+📌 Stored Procedure Structure:
+* Supports SQL commands (DDL, DML, TCL, DCL)
+* Supports T-SQL programming constructs
+* Can call Views, Functions, and Stored Procedures
+* Can create and manage temporary objects
+
+
 ## ⚙️ Stored Procedures & Programmable SQL
 📌 Features:
 - Supports input and output parameters
