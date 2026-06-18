@@ -1805,4 +1805,44 @@ set @x = 10
 set @z = 60
 
 -- set @z = @x + @y
-print @x + @y + @z
+print @x + @y + @z -- only as message 
+-- Select @x + @y + @z as Total -- can view in table format
+
+use indian_bank
+-- Programming is RAM
+-- Database is HDD
+declare @x int
+declare @y int
+declare @z  int
+
+set @y = 30
+set @x = 10
+set @z = 60
+
+-- set @z = @x + @y
+print 'TotalValue =' +cast (@z as Varchar) -- only as message 
+Select @z as Total -- can view in table format
+
+-- to create an program, we need to store in SP or Function
+-- SP Syntax:
+create proc <SpName>
+(
+		input,
+		output parameters
+)
+as 
+begin
+
+	SQL
+		DDL, DML, TCL, DCL
+
+		Temp Table/Table
+		create/drop
+
+		call view/sp/function
+
+	T-SQL 
+		Programming
+end
+
+-- we can write either SQL or T-SQL in the SP
