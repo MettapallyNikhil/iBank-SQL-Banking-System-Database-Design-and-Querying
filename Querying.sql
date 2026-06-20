@@ -1846,3 +1846,22 @@ begin
 end
 
 -- we can write either SQL or T-SQL in the SP
+
+use indian_bank
+
+-- We can use SP to centralise the code
+create proc add_numbers
+as
+begin
+	declare @x int
+	declare @y int
+	declare @z int
+	set @x = 10
+	set @y = 20
+	set @z = @x+@y
+
+print @z
+end
+
+-- calling an SP
+exec add_numbers
