@@ -223,12 +223,23 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Explored differences between message output and result-set output
 * Learned the basic structure of Stored Procedures combining SQL and T-SQL
 
+### ✔ Basic Stored Procedure Creation & Execution
+* Created a stored procedure containing T-SQL programming logic
+* Declared and manipulated local variables inside a procedure
+* Performed arithmetic operations using procedural code
+* Executed stored procedures using the `EXEC` command
+
+📌 Stored Procedure Concepts:
+* Encapsulates reusable business logic
+* Supports SQL and T-SQL statements
+* Executes as a single database object
+* Can be called multiple times without rewriting code
+
 📌 Stored Procedure Structure:
 * Supports SQL commands (DDL, DML, TCL, DCL)
 * Supports T-SQL programming constructs
 * Can call Views, Functions, and Stored Procedures
 * Can create and manage temporary objects
-
 
 ## ⚙️ Stored Procedures & Programmable SQL
 📌 Features:
