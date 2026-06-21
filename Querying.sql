@@ -1865,3 +1865,36 @@ end
 
 -- calling an SP
 exec add_numbers
+
+use indian_bank
+-- Alter SP
+-- Input parameters are used to inteact with SP (we will supply the data) - not holding the data - data cant be changed
+ALTER proc [dbo].[add_numbers]
+(
+	@x int,
+	@y int
+)
+as
+begin
+	declare @z int
+	set @z = @x+@y
+
+print @z
+end
+
+exec add_numbers 6454564,6464
+
+create proc multiply_numbers
+(
+	@x int,
+	@y int
+)
+as 
+begin
+	declare @z int
+	set @z = @x * @y
+
+print @z
+end
+
+exec multiply_numbers 416, 16
