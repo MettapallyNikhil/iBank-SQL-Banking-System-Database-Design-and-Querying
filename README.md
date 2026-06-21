@@ -255,6 +255,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Performance optimization through execution plan reuse
 
 ### ✔ Parameterized Stored Procedures
+* Modified stored procedures to accept input parameters dynamically
+* Passed user-supplied values during procedure execution
+* Performed arithmetic calculations using parameterized inputs
+* Improved code reusability through flexible procedure design
+
+📌 Input Parameter Concepts:
+* Accepts values from users or applications
+* Parameters are supplied during execution
+* Supports dynamic business logic processing
+* Eliminates hardcoded values within procedures
+
+### ✔ Parameterized Stored Procedures
 - Created reusable stored procedures using `CREATE PROCEDURE`
 - Executed stored procedures using `EXEC` and `EXECUTE`
 - Implemented input parameter handling for dynamic query execution
