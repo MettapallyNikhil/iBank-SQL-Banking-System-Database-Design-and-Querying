@@ -1898,3 +1898,29 @@ print @z
 end
 
 exec multiply_numbers 416, 16
+
+-- Adding 500 to existing variable:
+declare @x	money
+set @x = 100
+set @x = @x+500
+print @x + 4564654
+-- variables are not permanent after execution they get erased
+
+-- Swapping 2 numbers:
+declare @x int = 100
+declare @y int = 200
+
+print @x
+print @y
+-- Now swapping:
+declare @z int
+
+set @x = @y 
+set @y = @x
+set @z = @y
+
+set @z = null
+
+print @x
+print @y
+print @z
