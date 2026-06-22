@@ -217,6 +217,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Performed arithmetic calculations using variables
 * Displayed computed results using the `PRINT` statement
 
+### ✔ Variable Manipulation & Data Handling
+* Performed arithmetic operations using local variables
+* Updated variable values dynamically during execution
+* Explored temporary memory-based data storage concepts
+* Practiced variable swapping and value reassignment techniques
+
+📌 Variable Operations:
+* Variable initialization
+* Incrementing existing values
+* Temporary value storage
+* NULL assignment and memory cleanup
+
 ### ✔ Variable Output & T-SQL Program Structure
 * Displayed variable values using both `PRINT` and `SELECT` statements
 * Converted numeric data to string format using `CAST()`
