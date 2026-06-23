@@ -1924,3 +1924,30 @@ set @z = null
 print @x
 print @y
 print @z
+
+
+create proc	usp_GetTxns
+(
+		@acid	int
+)
+as
+begin
+
+		SELECT *
+		FROM Account_master
+		WHERE acid = @acid
+
+		SELECT *
+		FROM Transaction_master
+		WHERE DATEDIFF(yy, Dateoftransaction, GETDATE()) = 1
+		  AND acid = @acid
+
+		SELECT Transactiontype,
+			   COUNT(*) AS NoOfTxns
+		FROM Transaction_master
+		WHERE DATEDIFF(yy, Dateoftransaction, GETDATE()) = 1
+		  AND acid = @acid
+		GROUP BY Transactiontype
+end
+
+exec usp_GetTxns 105
