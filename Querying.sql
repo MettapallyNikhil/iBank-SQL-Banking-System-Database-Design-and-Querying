@@ -1951,3 +1951,32 @@ begin
 end
 
 exec usp_GetTxns 105
+
+-- SP is used for reusability
+-- Modify the SP
+alter proc	usp_GetTxns
+(
+		@acid	int,
+		@Tenure	tinyint
+)
+as
+begin
+
+		SELECT *
+		FROM Account_master
+		WHERE acid = @acid
+
+		SELECT *
+		FROM Transaction_master
+		WHERE DATEDIFF(yy, Dateoftransaction, GETDATE()) = @tenure
+		  AND acid = @acid
+
+		SELECT Transactiontype,
+			   COUNT(*) AS NoOfTxns
+		FROM Transaction_master
+		WHERE DATEDIFF(yy, Dateoftransaction, GETDATE()) = @tenure
+		  AND acid = @acid
+		GROUP BY Transactiontype
+end
+
+exec usp_GetTxns 222, 50
