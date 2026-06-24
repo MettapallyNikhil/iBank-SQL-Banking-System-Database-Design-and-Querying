@@ -308,6 +308,18 @@ Analyzed database objects including tables and views
 * Date-based transaction filtering
 * Aggregated transaction reporting
 
+### ✔ Multi-Result Stored Procedures for Account Analytics
+* Created parameterized stored procedures for account-wise transaction analysis
+* Retrieved customer account information using dynamic inputs
+* Generated transaction history reports for a specific time period
+* Produced transaction-type summaries using aggregation functions
+
+📌 Features Implemented:
+* Input parameter handling
+* Multiple result sets from a single procedure
+* Date-based transaction filtering
+* Aggregated transaction reporting
+
 ### ✔ Output Parameters & Procedure Alteration
 - Implemented stored procedures with both input and output parameters
 - Retrieved dynamic values from database tables using output variables
