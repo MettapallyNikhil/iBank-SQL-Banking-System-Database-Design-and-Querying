@@ -1980,3 +1980,36 @@ begin
 end
 
 exec usp_GetTxns 222, 50
+
+--Get all Sp's
+select * from sys.procedures
+
+/*
+GLOBAL VARIABLES:
+- created by SQL server
+- created using '@@' symbol
+- Already declared with variables
+- 'Read Only' Variables
+- We can only print/select them
+*/
+
+-- version name
+select @@version
+
+-- server name
+select @@SERVERNAME
+
+-- errors
+select  @@error
+
+-- Rowcount
+select * from Account_master
+select @@rowcount
+
+-- we can know how many commands are updated and all
+select * from Account_master where Acid = 4156465
+select @@rowcount
+
+select @@FETCH_STATUS
+
+-- Local variables are created by us for read and write, whereas Global are given By microsoft only for reading
