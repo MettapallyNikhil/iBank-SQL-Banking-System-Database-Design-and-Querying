@@ -2013,3 +2013,22 @@ select @@rowcount
 select @@FETCH_STATUS
 
 -- Local variables are created by us for read and write, whereas Global are given By microsoft only for reading
+
+-- Loop (To print 1000 numbers)
+-- For Loop (SQL doesnt support this)
+-- While Loop
+-- Syntax:
+-- 1. Initialise
+-- 2. Condition
+-- 3. Increment/decrement
+
+declare @x int
+set @x = 1
+
+while (@x <=100)
+begin
+
+	print @x
+
+	set @x = @x+1
+end
