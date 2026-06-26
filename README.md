@@ -266,6 +266,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Secure database access
 - Performance optimization through execution plan reuse
 
+### ✔ WHILE Loop & Iterative Processing
+* Implemented iterative logic using the `WHILE` loop
+* Controlled execution using loop conditions
+* Incremented variables dynamically during each iteration
+* Generated sequential output through repetitive execution
+
+📌 Loop Components:
+* Variable initialization
+* Loop condition evaluation
+* Increment/Decrement operations
+* Repetitive statement execution
+
 ### ✔ Parameterized Stored Procedures
 * Modified stored procedures to accept input parameters dynamically
 * Passed user-supplied values during procedure execution
@@ -295,30 +307,6 @@ Retrieved view definitions using SQL Server system procedures
 Modified existing views using ALTER VIEW
 Explored database metadata through system catalog views
 Analyzed database objects including tables and views
-
-### ✔ Multi-Result Stored Procedures for Account Analytics
-* Created parameterized stored procedures for account-wise transaction analysis
-* Retrieved customer account information using dynamic inputs
-* Generated transaction history reports for a specific time period
-* Produced transaction-type summaries using aggregation functions
-
-📌 Features Implemented:
-* Input parameter handling
-* Multiple result sets from a single procedure
-* Date-based transaction filtering
-* Aggregated transaction reporting
-
-### ✔ Multi-Result Stored Procedures for Account Analytics
-* Created parameterized stored procedures for account-wise transaction analysis
-* Retrieved customer account information using dynamic inputs
-* Generated transaction history reports for a specific time period
-* Produced transaction-type summaries using aggregation functions
-
-📌 Features Implemented:
-* Input parameter handling
-* Multiple result sets from a single procedure
-* Date-based transaction filtering
-* Aggregated transaction reporting
 
 ### ✔ Multi-Result Stored Procedures for Account Analytics
 * Created parameterized stored procedures for account-wise transaction analysis
