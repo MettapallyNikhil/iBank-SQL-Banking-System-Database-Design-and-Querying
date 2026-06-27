@@ -2032,3 +2032,30 @@ begin
 
 	set @x = @x+1
 end
+
+-- we can create loops in SP, as views dont support Loops
+create table tbl_nms 
+(Id		Int)
+
+select * from tbl_nms
+
+-- create SP and insert 100 Nos
+alter proc usp_Printnumbers
+as 
+begin
+	declare @x int
+	set @x = 1
+
+	while (@x <=100)
+	begin
+		
+		-- Action
+		Print @x
+		insert into tbl_nms values (@x)   
+
+		-- Incr
+		set @x = @x+1
+	end
+end
+
+exec usp_Printnumbers
