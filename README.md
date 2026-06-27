@@ -278,6 +278,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Increment/Decrement operations
 * Repetitive statement execution
 
+### ✔ WHILE Loop with Stored Procedures
+* Implemented iterative processing inside a stored procedure
+* Automated record insertion using loop-based logic
+* Generated sequential data through repetitive execution
+* Combined T-SQL programming with DML operations
+
+📌 Concepts Practiced:
+* Stored procedure with `WHILE` loop
+* Dynamic data insertion
+* Variable-controlled iteration
+* Automated batch processing
+
 ### ✔ Parameterized Stored Procedures
 * Modified stored procedures to accept input parameters dynamically
 * Passed user-supplied values during procedure execution
