@@ -2059,3 +2059,28 @@ begin
 end
 
 exec usp_Printnumbers
+
+-- Assignment
+-- Write a loop to Insert odd numbers in table (below 500)
+	declare @x	int
+	set @x = 1
+
+	while (@x<=500)
+	begin
+
+		print @x 
+
+		set @x = @x+2
+	end
+
+-- Write a loop to Insert Even numbers in table (below 1000)
+	declare @x	int
+	set @x = 2
+
+	while (@x<=1000)
+	begin
+
+		print @x 
+
+		set @x = @x+2
+	end
