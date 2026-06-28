@@ -290,6 +290,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Variable-controlled iteration
 * Automated batch processing
 
+### ✔ Conditional Number Generation using WHILE Loops
+* Generated odd and even number sequences using iterative processing
+* Controlled loop execution through variable initialization and increments
+* Implemented arithmetic progression using fixed step values
+* Practiced conditional looping techniques for automation tasks
+
+📌 Loop Scenarios:
+* Generate odd numbers
+* Generate even numbers
+* Variable-controlled iteration
+* Sequential number generation
+
 ### ✔ Parameterized Stored Procedures
 * Modified stored procedures to accept input parameters dynamically
 * Passed user-supplied values during procedure execution
