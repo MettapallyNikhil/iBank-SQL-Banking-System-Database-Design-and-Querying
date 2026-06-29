@@ -290,6 +290,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Variable-controlled iteration
 * Automated batch processing
 
+### ✔ Parameterized Loop-Based Data Generation
+* Created parameterized stored procedures for dynamic record generation
+* Accepted starting and ending values as input parameters
+* Automated sequential data insertion using `WHILE` loops
+* Reset destination tables before generating new datasets using `TRUNCATE`
+
+📌 Features Implemented:
+* Input parameter handling
+* Dynamic loop execution
+* Automated batch insertion
+* Table reset using `TRUNCATE`
+
 ### ✔ Conditional Number Generation using WHILE Loops
 * Generated odd and even number sequences using iterative processing
 * Controlled loop execution through variable initialization and increments
