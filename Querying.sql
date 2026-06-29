@@ -2084,3 +2084,30 @@ exec usp_Printnumbers
 
 		set @x = @x+2
 	end
+alter proc usp_Printnumbers
+(
+		@starting_value		int,
+		@upper_limit		int
+		
+)
+as 
+begin
+
+		-- Delete all rows
+		Truncate table tbl_nms
+	
+		while (@starting_value <= @upper_limit)
+		begin
+		
+		-- Action
+		insert into tbl_nms values (@starting_value)   
+
+		-- Incr
+		set @starting_value = @starting_value + 1
+		end
+end
+
+		-- Displaying the data
+		select * from tbl_nms
+
+exec usp_Printnumbers 30 , 32
