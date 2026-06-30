@@ -2111,3 +2111,56 @@ end
 		select * from tbl_nms
 
 exec usp_Printnumbers 30 , 32
+
+/*
+TEMP TABLE AND TABLE VARIABLE
+--Temp Tables
+--There are 2 types of Temp Tables.
+--------------------------------
+
+1) Local Temp Table:
+--It is created using # symbol.
+--It is available to the user, who created it
+--It is deleted when the user close the session
+--These tables are created in TempDB database.
+
+CREATE TABLE #Emp
+(
+    EID     INT       PRIMARY KEY,
+    NAME    CHAR(10)  NOT NULL,
+    GENDER  CHAR(1)   NOT NULL
+)
+
+Select * from #Emp
+
+insert into #Emp values (1, 'Nikhil', 'M')
+insert into #Emp values (2, 'Snehu', 'F')
+
+--Manually drop the table
+DROP TABLE #Emp
+
+--When we close the connection, then sql server automatically
+--drops the temp tables
+
+--Global Temp Tables
+----------------------------------------
+--It is created using ## symbol.
+--It is available to all users
+--It is deleted when all the users close their sessions/Connections
+--These tables are created in TempDB database.
+
+CREATE TABLE ##Emp
+(
+    EID      INT       PRIMARY KEY,
+    NAME     CHAR(10)  NOT NULL,
+    GENDER   CHAR(1)   NOT NULL
+)
+
+INSERT INTO ##Emp VALUES (1, 'Bhaskar', 'M')
+INSERT INTO ##Emp VALUES (2, 'Kavitha', 'F')
+
+select * from ##Emp
+
+To operate the Global Temp, the main createor should bve there.
+
+- Table Variable
