@@ -198,6 +198,24 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Window aggregation (`SUM() OVER`)
 - Common Table Expressions (`CTE`)
 
+### ✔ Local & Global Temporary Tables
+* Created temporary tables for session-based and shared data storage
+* Implemented local (`#`) and global (`##`) temporary tables
+* Performed temporary data insertion, retrieval, and deletion operations
+* Explored session scope and lifecycle management of temporary tables
+
+📌 Local Temporary Tables (`#`):
+* Accessible only within the current session
+* Automatically removed when the session ends
+* Stored in the `tempdb` database
+* Used for temporary intermediate processing
+
+📌 Global Temporary Tables (`##`):
+* Accessible to all active SQL Server sessions
+* Stored in the `tempdb` database
+* Automatically removed after the creating session ends and no other session is using the table
+* Useful for sharing temporary data across multiple sessions
+
 ## 🔄 ETL Concepts & Incremental Loading
 - Implemented full table synchronization using `MERGE`
 - Inserted new records not present in target tables
