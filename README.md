@@ -216,6 +216,24 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Automatically removed after the creating session ends and no other session is using the table
 * Useful for sharing temporary data across multiple sessions
 
+### ✔ Table Variables
+* Implemented table variables for temporary in-memory style data storage
+* Stored multiple rows using table-type variables
+* Performed insert and retrieval operations on table variables
+* Compared table variables with temporary tables for different use cases
+
+📌 Table Variable Characteristics:
+* Declared using the `@` symbol
+* Stored internally in the `tempdb` database
+* Exists only during the current batch or procedure execution
+* Best suited for small datasets and one-time processing
+
+📌 Table Variables vs Temporary Tables:
+* Table variables are intended for small datasets
+* Temporary tables (`#`) are better suited for larger datasets
+* Table variables are automatically removed after execution
+* Table variables cannot be dropped explicitly using `DROP TABLE`
+
 ## 🔄 ETL Concepts & Incremental Loading
 - Implemented full table synchronization using `MERGE`
 - Inserted new records not present in target tables
