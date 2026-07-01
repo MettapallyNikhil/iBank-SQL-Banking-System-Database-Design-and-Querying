@@ -2163,4 +2163,23 @@ select * from ##Emp
 
 To operate the Global Temp, the main createor should bve there.
 
-- Table Variable
+- Table Variable (one time usage)
+-- Normal variables takes the space in RAM
+-- Storing a table inside a variable is Table variable
+Table Variable is allocated in TempDB
+
+declare @x table
+(
+	eid			int			primary key,
+	name		varchar(50)
+)
+
+insert into @x values (1, 'Nikhil')
+
+select * from @x
+
+TEMPDB AND TABLE VARIABLE
+- Temp table (#) after execution is available (multiple usage) - large data
+- Table variable is gone after execution - small data
+- cant drop the table variable
+
