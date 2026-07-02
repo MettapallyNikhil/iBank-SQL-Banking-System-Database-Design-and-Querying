@@ -2182,4 +2182,33 @@ TEMPDB AND TABLE VARIABLE
 - Temp table (#) after execution is available (multiple usage) - large data
 - Table variable is gone after execution - small data
 - cant drop the table variable
+*/
 
+select * from Account_master
+
+-- assignment
+-- Display all customers whose balance is greater than the average account balance.
+select * 
+from Account_master
+where Clearbalance > 
+(
+	select Avg(Clearbalance)
+	from Account_master
+)
+
+/*
+Categorize customers based on their balance.
+Less than 5,000 → Silver
+5,000 – 10,000 → Gold
+Above 10,000 → Platinum
+*/
+SELECT
+    Acid,
+    Name,
+    ClearBalance,
+    case
+        WHEN ClearBalance < 5000 THEN 'Silver'
+        WHEN ClearBalance BETWEEN 5000 AND 10000 THEN 'Gold'
+        ELSE 'Platinum'
+	end
+FROM Account_master;
