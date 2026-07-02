@@ -106,6 +106,18 @@ Implemented SQL aggregation techniques for data analysis:
 ### ✔ CASE Statement
 Used to categorize data based on conditions such as customer segmentation.
 
+### ✔ Conditional Classification & Aggregate Subqueries
+* Retrieved customers with balances above the overall average
+* Applied aggregate subqueries for dynamic data filtering
+* Categorized customers using the `CASE` expression
+* Implemented customer segmentation based on account balance ranges
+
+📌 Concepts Practiced:
+* Aggregate subqueries
+* `AVG()` function
+* `CASE` expression
+* Conditional customer classification
+
 ### ✔ Subqueries
 Used to retrieve data based on results of another query (e.g., highest balance accounts).
 
