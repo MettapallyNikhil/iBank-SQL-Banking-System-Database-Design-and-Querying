@@ -2084,6 +2084,7 @@ exec usp_Printnumbers
 
 		set @x = @x+2
 	end
+
 alter proc usp_Printnumbers
 (
 		@starting_value		int,
@@ -2212,3 +2213,51 @@ SELECT
         ELSE 'Platinum'
 	end
 FROM Account_master;
+
+-- Debugging a SP
+ALTER PROC usp_Printnumbers
+(
+    @starting_value INT,
+    @upper_limit INT
+)
+AS
+BEGIN
+
+    BEGIN TRY
+
+        -- Delete all rows
+        TRUNCATE TABLE tbl_nms;
+
+        WHILE (@starting_value <= @upper_limit)
+        BEGIN
+
+            -- Action
+            INSERT INTO tbl_nms
+            VALUES (@starting_value);
+
+            -- Increment
+            SET @starting_value = @starting_value + 1;
+
+        END
+
+        -- Display the data
+        SELECT * FROM tbl_nms;
+
+    END TRY
+
+    BEGIN CATCH
+
+        SELECT
+            ERROR_NUMBER() AS ErrorNumber,
+            ERROR_MESSAGE() AS ErrorMessage,
+            ERROR_LINE() AS ErrorLine,
+            ERROR_PROCEDURE() AS ProcedureName,
+            ERROR_SEVERITY() AS Severity,
+            ERROR_STATE() AS State;
+
+    END CATCH
+
+END;
+
+exec usp_Printnumbers 222, 2222
+
