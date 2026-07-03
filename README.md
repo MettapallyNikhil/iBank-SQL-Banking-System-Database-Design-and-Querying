@@ -386,6 +386,12 @@ Automated inactive account identification based on transaction history
 Updated account status using centralized business logic
 Improved maintainability through reusable procedural code
 
+### ✔ Stored Procedure Debugging & Exception Handling
+* Implemented structured exception handling using `TRY...CATCH`
+* Captured detailed SQL Server error information during execution
+* Improved stored procedure reliability through runtime error handling
+* Retrieved diagnostic information for debugging and troubleshooting
+
 ✔ View Management & Metadata Analysis
 Retrieved view definitions using SQL Server system procedures
 Modified existing views using ALTER VIEW
