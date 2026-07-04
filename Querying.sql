@@ -2261,3 +2261,31 @@ END;
 
 exec usp_Printnumbers 222, 2222
 
+INSERT INTO tbl_nms VALUES ('ABC');
+
+-- OUTPUT PARAMETERS IN SP
+Use INDIAN_BANK
+
+alter proc Get_CstInformation
+(
+		@acid			int,
+		@CustName		varchar(40)		out,
+		@Balance		money			out
+)
+as 
+begin
+		if exists (select * from Account_master where acid = @acid)
+					select @CustName = Name, @Balance = Clearbalance from Account_master where acid = @acid
+		else
+			print ' Acid Invalid'
+end
+
+declare @Name			varchar(40)
+declare @Clearbalance	money
+exec Get_CstInformation 101, @Name out, @Clearbalance out
+print @Name
+print @Clearbalance
+
+EXEC Get_CstInformation @acid = 199;
+
+sp_help 'dbo.Get_CstInformation'
