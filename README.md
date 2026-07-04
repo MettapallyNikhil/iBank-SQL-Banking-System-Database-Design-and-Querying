@@ -386,6 +386,18 @@ Automated inactive account identification based on transaction history
 Updated account status using centralized business logic
 Improved maintainability through reusable procedural code
 
+### ✔ Output Parameters in Stored Procedures
+* Implemented output parameters to return values from stored procedures
+* Retrieved customer name and account balance dynamically
+* Validated account existence before returning results
+* Passed output values to local variables for further processing
+
+📌 Output Parameter Features:
+* Returns values to the calling program
+* Supports multiple output parameters
+* Uses the `OUT` keyword for parameter binding
+* Enables reusable data retrieval procedures
+
 ### ✔ Stored Procedure Debugging & Exception Handling
 * Implemented structured exception handling using `TRY...CATCH`
 * Captured detailed SQL Server error information during execution
