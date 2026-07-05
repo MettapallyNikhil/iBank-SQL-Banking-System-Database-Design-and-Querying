@@ -410,6 +410,24 @@ Modified existing views using ALTER VIEW
 Explored database metadata through system catalog views
 Analyzed database objects including tables and views
 
+### ✔ Error Detection using `@@ERROR`
+* Explored runtime error detection using the `@@ERROR` system function
+* Verified execution status immediately after SQL statements
+* Identified successful and failed query executions
+* Compared legacy error handling with modern `TRY...CATCH` blocks
+
+📌 `@@ERROR` Features:
+* Returns `0` when the previous statement executes successfully
+* Returns a non-zero error number if the previous statement fails
+* Must be checked immediately after the SQL statement
+* Primarily used in legacy SQL Server error handling
+
+📌 Return Statement Notes:
+* Indicates whether a SQL statement executed successfully
+* `0` → Successful execution
+* Non-zero → Error occurred
+* `TRY...CATCH` is the preferred approach for modern SQL Server programming
+
 ### ✔ Multi-Result Stored Procedures for Account Analytics
 * Created parameterized stored procedures for account-wise transaction analysis
 * Retrieved customer account information using dynamic inputs
