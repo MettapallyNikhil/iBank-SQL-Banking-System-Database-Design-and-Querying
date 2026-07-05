@@ -2286,6 +2286,24 @@ exec Get_CstInformation 101, @Name out, @Clearbalance out
 print @Name
 print @Clearbalance
 
-EXEC Get_CstInformation @acid = 199;
-
 sp_help 'dbo.Get_CstInformation'
+
+-- Exception/Error Handling
+-- Error occurs at runtime is Exception
+use indian_bank
+select * from Account_master
+go
+select @@ERROR as Result
+
+select * from Account_masteer
+go
+select @@ERROR as Result
+
+/*
+Return Statement
+It tell twhether the query successfully executed or not
+if everything is correct it will return 0, if not Non-Zero
+Cons:
+Too Much of Code
+Difficult
+*/
