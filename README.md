@@ -398,17 +398,17 @@ Improved maintainability through reusable procedural code
 * Uses the `OUT` keyword for parameter binding
 * Enables reusable data retrieval procedures
 
-### ✔ Stored Procedure Debugging & Exception Handling
+### ✔ TRY...CATCH Exception Handling & Error Logging
 * Implemented structured exception handling using `TRY...CATCH`
-* Captured detailed SQL Server error information during execution
-* Improved stored procedure reliability through runtime error handling
-* Retrieved diagnostic information for debugging and troubleshooting
+* Logged runtime errors into a dedicated SQL error log table
+* Returned execution status using `RETURN` codes
+* Captured complete error diagnostics for debugging and auditing
 
-✔ View Management & Metadata Analysis
-Retrieved view definitions using SQL Server system procedures
-Modified existing views using ALTER VIEW
-Explored database metadata through system catalog views
-Analyzed database objects including tables and views
+📌 Exception Handling Features:
+* `BEGIN TRY...END TRY`
+* `BEGIN CATCH...END CATCH`
+* Automatic error logging
+* Success (`0`) and failure (`1`) return codes
 
 ### ✔ Error Detection using `@@ERROR`
 * Explored runtime error detection using the `@@ERROR` system function
