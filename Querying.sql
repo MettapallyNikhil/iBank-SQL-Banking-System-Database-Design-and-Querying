@@ -2307,3 +2307,56 @@ Cons:
 Too Much of Code
 Difficult
 */
+/*
+new syntax - try and catch block:
+when there is error they will catch the error
+begin try
+end try
+begin catch
+end catch
+*/
+
+alter proc usp_Divide2Nums
+(
+		@x	int,
+		@y	int
+)
+as 
+begin
+begin Try
+		declare @z int
+
+		Set	@z = @x/@y
+		print @z
+
+		return 0 -- Success
+end try
+Begin catch
+		insert into SQL_Logs
+		select	ERROR_LINE()		as Err_Line,
+				Error_message()		as Err_message,
+				ERROR_NUMBER()		as Err_num,
+				ERROR_PROCEDURE()	as Err_SPName,
+				GETDATE()			as Err_DateTime,
+				ERROR_SEVERITY()	as Err_Sev,
+				ERROR_STATE()		as Err_State
+				
+		Return 1 -- fail
+end catch
+end
+
+exec	usp_Divide2Nums   50,0
+
+CREATE TABLE SQL_Logs
+(
+    ID           INT			IDENTITY,
+    Err_Line     INT			NOT NULL,
+    Err_Message  VARCHAR(MAX)	NOT NULL,
+    Err_Num      INT			NOT NULL,
+    Err_SPName   VARCHAR(100)	NOT NULL,
+    Err_DateTime DATETIME		NOT NULL,
+    Err_Sev      INT			NULL,
+    Err_State    INT			NULL
+);
+
+select * from SQL_Logs
