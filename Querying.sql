@@ -2360,3 +2360,18 @@ CREATE TABLE SQL_Logs
 );
 
 select * from SQL_Logs
+
+-- Input or Output - to give data to client applications
+alter proc usp_GetCustomers
+(
+	@brid char(3) = 'BR4' -- we can give an default value, so that after execution user gets only these data
+)
+as
+begin
+	select * from Account_master where brid = @brid
+end
+
+exec usp_GetCustomers 'BR2'
+
+-- inside the ram all the parameters are stored.
+-- we need to give correct data type for parameters.
