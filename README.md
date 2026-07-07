@@ -386,6 +386,18 @@ Automated inactive account identification based on transaction history
 Updated account status using centralized business logic
 Improved maintainability through reusable procedural code
 
+### ✔ Default Parameter Values in Stored Procedures
+* Implemented stored procedures with default input parameter values
+* Retrieved branch-specific customer information dynamically
+* Allowed procedure execution with or without explicit parameter values
+* Improved flexibility through optional parameter handling
+
+📌 Default Parameter Features:
+* Parameters can be assigned default values
+* Users may override the default during execution
+* Simplifies procedure execution for common scenarios
+* Enhances reusability of stored procedures
+
 ### ✔ Output Parameters in Stored Procedures
 * Implemented output parameters to return values from stored procedures
 * Retrieved customer name and account balance dynamically
