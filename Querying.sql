@@ -2375,3 +2375,16 @@ exec usp_GetCustomers 'BR2'
 
 -- inside the ram all the parameters are stored.
 -- we need to give correct data type for parameters.
+/*
+Stored Procedure Recompilation
+* Learned the purpose of recompiling stored procedures for updated execution plans
+* Improved query optimization when underlying data distribution changes
+* Reduced performance issues caused by outdated cached execution plans
+* Explored recompilation techniques for dynamic and parameter-sensitive queries
+
+Recompilation Benefits:
+* Generates a new execution plan during execution
+* Optimizes performance after significant data changes
+* Resolves parameter sniffing issues
+* Useful for procedures with varying input patterns
+*/
