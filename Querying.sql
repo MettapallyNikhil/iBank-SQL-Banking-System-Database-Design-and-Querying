@@ -2388,3 +2388,23 @@ Recompilation Benefits:
 * Resolves parameter sniffing issues
 * Useful for procedures with varying input patterns
 */
+
+/*
+Syntax:
+create proc sp1 
+with recompile
+as
+begin
+
+.......
+end
+go
+
+end
+*/
+
+/*
+When SP is Slow, recompile it
+in recompile the cached data gets deleted
+after recompile if still its slow, we need to check which query is making the SP slow
+*/
