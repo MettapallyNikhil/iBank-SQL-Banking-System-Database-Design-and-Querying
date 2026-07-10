@@ -2408,3 +2408,11 @@ When SP is Slow, recompile it
 in recompile the cached data gets deleted
 after recompile if still its slow, we need to check which query is making the SP slow
 */
+
+/*
+TYPES OF SP'S
+- User Defined 
+- System Defined
+- Extended 
+- CLR(.NET) - Common Language Runtime
+*/
