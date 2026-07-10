@@ -362,6 +362,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Variable-controlled iteration
 * Sequential number generation
 
+### ✔ Types of Stored Procedures
+* Explored different categories of stored procedures available in SQL Server
+* Learned the purpose and use cases of each stored procedure type
+* Distinguished between user-created and system-provided procedures
+* Introduced CLR integration for .NET-based database programming
+
+📌 Stored Procedure Types:
+* **User-Defined Stored Procedures** – Created by developers for implementing business logic.
+* **System Stored Procedures** – Built-in SQL Server procedures for administration and metadata operations.
+* **Extended Stored Procedures** – Legacy procedures used to execute external programs (deprecated).
+* **CLR Stored Procedures** – Developed using .NET languages and executed through SQL Server Common Language Runtime (CLR).
+
 ### ✔ Parameterized Stored Procedures
 * Modified stored procedures to accept input parameters dynamically
 * Passed user-supplied values during procedure execution
