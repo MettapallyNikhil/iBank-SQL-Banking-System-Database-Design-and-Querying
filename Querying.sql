@@ -2416,3 +2416,29 @@ TYPES OF SP'S
 - Extended 
 - CLR(.NET) - Common Language Runtime
 */
+
+ALTER PROC usp_CheckBalance
+(
+    @Acid INT
+)
+AS
+BEGIN
+    IF EXISTS
+    (
+        SELECT 1
+        FROM Account_master
+        WHERE Acid = @Acid
+    )
+    BEGIN
+        SELECT *
+        FROM Account_master
+        WHERE Acid = @Acid;
+    END
+    ELSE
+    BEGIN
+        PRINT 'Invalid Account ID';
+    END
+END;
+
+EXEC usp_CheckBalance 101;
+EXEC usp_CheckBalance 999;
