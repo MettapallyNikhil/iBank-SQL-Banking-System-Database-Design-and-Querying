@@ -326,6 +326,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 * Increment/Decrement operations
 * Repetitive statement execution
 
+✔ IF...ELSE Conditional Programming
+Implemented conditional execution using IF...ELSE statements
+Applied business rule validation before executing SQL operations
+Controlled program flow based on logical conditions
+Improved stored procedure decision-making through conditional branching
+
+📌 Concepts Practiced:
+IF statement
+ELSE statement
+Conditional execution
+Business rule validation
+
 ### ✔ WHILE Loop with Stored Procedures
 * Implemented iterative processing inside a stored procedure
 * Automated record insertion using loop-based logic
