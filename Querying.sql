@@ -2442,3 +2442,17 @@ END;
 
 EXEC usp_CheckBalance 101;
 EXEC usp_CheckBalance 999;
+
+-- BREAK & CONTINUE in WHILE Loops
+DECLARE @x INT = 1;
+
+WHILE (@x <= 10)
+BEGIN
+
+    IF (@x = 6)
+        BREAK;
+
+    PRINT @x;
+
+    SET @x = @x + 1;
+END;
