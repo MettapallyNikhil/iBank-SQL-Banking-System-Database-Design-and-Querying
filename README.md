@@ -338,6 +338,18 @@ ELSE statement
 Conditional execution
 Business rule validation
 
+✔ BREAK & CONTINUE in WHILE Loops
+Implemented loop control using BREAK and CONTINUE
+Terminated loop execution based on business conditions
+Skipped specific iterations without stopping the loop
+Improved control over iterative processing in T-SQL programs
+
+📌 Loop Control Statements:
+BREAK – Exits the loop immediately
+CONTINUE – Skips the remaining statements in the current iteration
+Used for conditional execution inside loops
+Simplifies complex iterative logic
+
 ### ✔ WHILE Loop with Stored Procedures
 * Implemented iterative processing inside a stored procedure
 * Automated record insertion using loop-based logic
