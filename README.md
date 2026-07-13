@@ -314,6 +314,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Secure database access
 - Performance optimization through execution plan reuse
 
+✔ Transaction Management using BEGIN, COMMIT & ROLLBACK
+Implemented database transactions to ensure atomic execution of multiple SQL statements
+Committed successful transactions permanently to the database
+Rolled back transactions automatically when errors occurred
+Preserved data consistency during critical banking operations
+
+📌 Transaction Commands:
+BEGIN TRANSACTION – Starts a transaction
+COMMIT TRANSACTION – Permanently saves all changes
+ROLLBACK TRANSACTION – Reverts all changes made during the transaction
+Ensures ACID properties for reliable database operations
+
 ### ✔ WHILE Loop & Iterative Processing
 * Implemented iterative logic using the `WHILE` loop
 * Controlled execution using loop conditions
