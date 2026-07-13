@@ -2456,3 +2456,18 @@ BEGIN
 
     SET @x = @x + 1;
 END;
+
+Use Indian_bank
+
+BEGIN TRANSACTION;
+
+UPDATE Account_master
+SET ClearBalance = ClearBalance - 1000
+WHERE Acid = 101;
+
+UPDATE Account_master
+SET ClearBalance = ClearBalance + 1000
+WHERE Acid = 102;
+
+COMMIT TRANSACTION;
+
