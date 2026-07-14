@@ -2471,3 +2471,16 @@ WHERE Acid = 102;
 
 COMMIT TRANSACTION;
 
+-- Transaction Rollback
+BEGIN TRANSACTION;
+
+UPDATE Account_master
+SET ClearBalance = ClearBalance - 1000
+WHERE Acid = 101;
+
+-- Error
+UPDATE Account_master
+SET ClearBalance = ClearBalance + 1000
+WHERE Acid = 102;
+
+ROLLBACK TRANSACTION;
