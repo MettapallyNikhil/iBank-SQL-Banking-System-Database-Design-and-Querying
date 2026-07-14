@@ -326,6 +326,12 @@ COMMIT TRANSACTION – Permanently saves all changes
 ROLLBACK TRANSACTION – Reverts all changes made during the transaction
 Ensures ACID properties for reliable database operations
 
+✔ Transaction Rollback
+Reverted database changes when an error occurred
+Prevented partial updates during transaction failures
+Ensured reliable execution of banking operations
+Protected database consistency through rollback mechanisms
+
 ### ✔ WHILE Loop & Iterative Processing
 * Implemented iterative logic using the `WHILE` loop
 * Controlled execution using loop conditions
