@@ -332,6 +332,12 @@ Prevented partial updates during transaction failures
 Ensured reliable execution of banking operations
 Protected database consistency through rollback mechanisms
 
+✔ TRY...CATCH with Transactions
+Combined transaction management with structured exception handling
+Committed successful transactions and rolled back failed operations
+Improved reliability of business-critical SQL procedures
+Captured runtime exceptions while maintaining data integrity
+
 ### ✔ WHILE Loop & Iterative Processing
 * Implemented iterative logic using the `WHILE` loop
 * Controlled execution using loop conditions
