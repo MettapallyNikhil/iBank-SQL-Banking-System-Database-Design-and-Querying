@@ -2484,3 +2484,28 @@ SET ClearBalance = ClearBalance + 1000
 WHERE Acid = 102;
 
 ROLLBACK TRANSACTION;
+
+-- TRY...CATCH with Transactions
+BEGIN TRY
+
+    BEGIN TRANSACTION;
+
+    UPDATE Account_master
+    SET ClearBalance = ClearBalance - 1000
+    WHERE Acid = 101;
+
+    UPDATE Account_master
+    SET ClearBalance = ClearBalance + 1000
+    WHERE Acid = 102;
+
+    COMMIT TRANSACTION;
+
+END TRY
+
+BEGIN CATCH
+
+    ROLLBACK TRANSACTION;
+
+    PRINT ERROR_MESSAGE();
+
+END CATCH;
