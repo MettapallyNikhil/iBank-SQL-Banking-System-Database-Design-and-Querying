@@ -536,6 +536,21 @@ Improved maintainability through reusable procedural code
 - Handled invalid account inputs gracefully
 - Combined procedural logic with output parameters for controlled execution
 
+⚡ Dynamic SQL
+Dynamic SQL enables SQL statements to be constructed and executed at runtime based on user input or application requirements.
+
+✔ Dynamic SQL using EXEC()
+Implemented dynamic SQL statements executed at runtime
+Constructed SQL queries using string variables
+Executed dynamically generated SQL using the EXEC() command
+Improved query flexibility for dynamic filtering and reporting
+
+📌 Dynamic SQL Features:
+Query is built during execution
+Supports dynamic table and column selection
+Useful for search screens and reporting
+Enables flexible SQL generation
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
