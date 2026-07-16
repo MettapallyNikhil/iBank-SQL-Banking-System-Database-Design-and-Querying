@@ -2509,3 +2509,14 @@ BEGIN CATCH
     PRINT ERROR_MESSAGE();
 
 END CATCH;
+
+-- Dynamic SQL
+
+DECLARE @SQL VARCHAR(MAX);
+
+SET @SQL =
+'SELECT *
+ FROM Account_master
+ WHERE Brid = ''BR2''';
+
+EXEC(@SQL);
