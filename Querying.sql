@@ -2520,3 +2520,17 @@ SET @SQL =
  WHERE Brid = ''BR2''';
 
 EXEC(@SQL);
+
+-- Parameterized Dynamic SQL using sp_executesql
+
+DECLARE @SQL NVARCHAR(MAX);
+
+SET @SQL =
+N'SELECT *
+  FROM Account_master
+  WHERE Brid = @Branch';
+
+EXEC sp_executesql
+    @SQL,
+    N'@Branch CHAR(3)',
+    @Branch = 'BR2';
