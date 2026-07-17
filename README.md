@@ -551,6 +551,18 @@ Supports dynamic table and column selection
 Useful for search screens and reporting
 Enables flexible SQL generation
 
+✔ Parameterized Dynamic SQL using (sp_executesql)
+Executed parameterized dynamic SQL securely
+Reduced SQL injection risks through parameter binding
+Improved execution plan reuse
+Enhanced performance for repeated dynamic queries
+
+📌 Benefits of sp_executesql:
+Supports input parameters
+Better execution plan caching
+More secure than string concatenation
+Recommended for production environments
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
