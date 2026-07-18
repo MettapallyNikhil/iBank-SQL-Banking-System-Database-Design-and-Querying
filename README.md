@@ -563,6 +563,24 @@ Better execution plan caching
 More secure than string concatenation
 Recommended for production environments
 
+✔ String Manipulation Functions
+Practiced built-in SQL Server string functions for text processing
+Formatted and transformed character data efficiently
+Improved data quality using string manipulation techniques
+Applied string functions in real-world querying scenarios
+
+📌 Functions Covered:
+UPPER()
+LOWER()
+LEN()
+LTRIM()
+RTRIM()
+TRIM()
+LEFT()
+RIGHT()
+SUBSTRING()
+REPLACE()
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
