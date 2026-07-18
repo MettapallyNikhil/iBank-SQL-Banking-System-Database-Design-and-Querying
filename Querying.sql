@@ -2534,3 +2534,15 @@ EXEC sp_executesql
     @SQL,
     N'@Branch CHAR(3)',
     @Branch = 'BR2';
+
+	SELECT
+    Name,
+    UPPER(Name) AS UpperCase,
+    LOWER(Name) AS LowerCase,
+    LEN(Name) AS Length,
+    LEFT(Name, 4) AS FirstFourLetters,
+    RIGHT(Name, 3) AS LastThreeLetters,
+    SUBSTRING(Name, 2, 5) AS ExtractedText,
+    REPLACE(Name, 'a', '@') AS ReplacedText,
+    TRIM(Name) AS TrimmedName
+		FROM Account_master;
