@@ -581,6 +581,16 @@ RIGHT()
 SUBSTRING()
 REPLACE()
 
+✔ Searching Text
+Retrieved character positions using search functions
+Extracted text dynamically from string values
+Improved querying of textual data
+Applied text-search operations for business reporting
+
+📌 Functions Covered:
+CHARINDEX()
+PATINDEX()
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
