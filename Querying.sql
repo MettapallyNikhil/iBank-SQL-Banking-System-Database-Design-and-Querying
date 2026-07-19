@@ -2546,3 +2546,10 @@ EXEC sp_executesql
     REPLACE(Name, 'a', '@') AS ReplacedText,
     TRIM(Name) AS TrimmedName
 		FROM Account_master;
+
+-- Searching text:
+SELECT
+    Name,
+    CHARINDEX('L', Name) AS PositionOfA,
+    PATINDEX('%son%', Name) AS PatternPosition
+FROM Account_master;
