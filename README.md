@@ -591,6 +591,23 @@ Applied text-search operations for business reporting
 CHARINDEX()
 PATINDEX()
 
+✔ Date & Time Functions
+Implemented built-in SQL Server date functions for retrieving and manipulating dates
+Performed date arithmetic and interval calculations
+Extracted individual date components for reporting and analysis
+Applied date functions in banking and transaction-based scenarios
+
+📌 Functions Covered:
+GETDATE()
+CURRENT_TIMESTAMP
+DATEADD()
+DATEDIFF()
+DATEPART()
+DATENAME()
+DAY()
+MONTH()
+YEAR()
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
