@@ -2553,3 +2553,15 @@ SELECT
     CHARINDEX('L', Name) AS PositionOfA,
     PATINDEX('%son%', Name) AS PatternPosition
 FROM Account_master;
+
+-- Date & Time Functions
+SELECT
+    GETDATE() AS CurrentDate,
+    CURRENT_TIMESTAMP AS CurrentTimestamp,
+    DATEADD(DAY, 30, GETDATE()) AS Next30Days,
+    DATEDIFF(YEAR, '2020-01-01', GETDATE()) AS YearsPassed,
+    YEAR(GETDATE()) AS CurrentYear,
+    MONTH(GETDATE()) AS CurrentMonth,
+    DAY(GETDATE()) AS CurrentDay,
+    DATENAME(MONTH, GETDATE()) AS MonthName,
+    DATEPART(WEEK, GETDATE()) AS WeekNumber;
