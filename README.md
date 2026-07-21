@@ -608,6 +608,12 @@ DAY()
 MONTH()
 YEAR()
 
+✔ Date Formatting & Business Calculations
+Formatted date values for reports and dashboards
+Calculated future and previous dates using date arithmetic
+Measured durations between important business events
+Supported time-based analysis for transactional data
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
