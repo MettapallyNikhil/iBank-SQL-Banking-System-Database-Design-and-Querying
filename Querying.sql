@@ -2565,3 +2565,12 @@ SELECT
     DAY(GETDATE()) AS CurrentDay,
     DATENAME(MONTH, GETDATE()) AS MonthName,
     DATEPART(WEEK, GETDATE()) AS WeekNumber;
+
+-- Date Formatting & Business Calculations
+SELECT
+    Dateofopening,
+    DATEADD(MONTH, 6, Dateofopening) AS ReviewDate,
+    DATEDIFF(DAY, Dateofopening, GETDATE()) AS AccountAgeInDays
+FROM Account_master;
+
+select * from Account_master
