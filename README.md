@@ -614,6 +614,23 @@ Calculated future and previous dates using date arithmetic
 Measured durations between important business events
 Supported time-based analysis for transactional data
 
+✔ Mathematical Functions
+Implemented built-in mathematical functions for numeric calculations
+Performed rounding, absolute value, and power computations
+Applied mathematical operations for financial and analytical scenarios
+Improved data analysis through efficient numerical processing
+
+📌 Functions Covered:
+ABS()
+ROUND()
+CEILING()
+FLOOR()
+POWER()
+SQRT()
+SQUARE()
+PI()
+RAND()
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
