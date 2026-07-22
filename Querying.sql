@@ -2574,3 +2574,15 @@ SELECT
 FROM Account_master;
 
 select * from Account_master
+
+-- Mathematical Functions
+SELECT
+    ABS(-2500) AS AbsoluteValue,
+    ROUND(1250.5678, 2) AS RoundedValue,
+    CEILING(1250.25) AS CeilingValue,
+    FLOOR(1250.95) AS FloorValue,
+    POWER(5, 3) AS PowerValue,
+    SQRT(625) AS SquareRoot,
+    SQUARE(25) AS SquareValue,
+    PI() AS PiValue,
+    RAND() AS RandomNumber;
