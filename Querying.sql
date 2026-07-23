@@ -2596,3 +2596,36 @@ SELECT
     CEILING(ClearBalance) AS CeilingBalance,
     FLOOR(ClearBalance) AS FloorBalance
 FROM Account_master;
+
+-- Table-Valued Parameters (TVPs)
+CREATE TYPE CustomerType AS TABLE
+(
+    Custid	INT,
+    Name	VARCHAR(50),
+    City	VARCHAR(30)
+);
+
+Alter PROC usp_InsertCustomers
+(
+    @Customers CustomerType READONLY
+)
+AS
+BEGIN
+
+    INSERT INTO Account_master (Acid, Name, Address)
+    SELECT Acid, Name, Address
+    FROM Account_master;
+
+END;
+
+DECLARE @CustomerList CustomerType;
+
+INSERT INTO @CustomerList
+VALUES
+(101,'Rahul','Hyderabad'),
+(102,'Priya','Bangalore'),
+(103,'Arjun','Chennai');
+
+EXEC usp_InsertCustomers @CustomerList;
+
+Select * from Account_master
