@@ -314,6 +314,18 @@ Window Functions → CTE → Duplicate Handling → Running Totals
 - Secure database access
 - Performance optimization through execution plan reuse
 
+✔ Batch Data Processing using TVPs
+Implemented user-defined table types for passing multiple records
+Processed bulk data efficiently using stored procedures
+Reduced multiple database calls by sending tabular data as a single parameter
+Improved performance for batch insert and update operations
+
+📌 Concepts Covered:
+User-Defined Table Type
+READONLY Table-Valued Parameters
+Batch Inserts
+Bulk Data Processing
+
 ✔ Transaction Management using BEGIN, COMMIT & ROLLBACK
 Implemented database transactions to ensure atomic execution of multiple SQL statements
 Committed successful transactions permanently to the database
