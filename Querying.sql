@@ -2586,3 +2586,13 @@ SELECT
     SQUARE(25) AS SquareValue,
     PI() AS PiValue,
     RAND() AS RandomNumber;
+
+-- Mathematical Functions with Banking Data
+SELECT
+    Acid,
+    ClearBalance,
+    ROUND(ClearBalance, 2) AS RoundedBalance,
+    ABS(ClearBalance - 5000) AS DifferenceFromTarget,
+    CEILING(ClearBalance) AS CeilingBalance,
+    FLOOR(ClearBalance) AS FloorBalance
+FROM Account_master;
