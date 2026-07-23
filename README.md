@@ -631,6 +631,12 @@ SQUARE()
 PI()
 RAND()
 
+✔ Mathematical Functions with Banking Data
+Applied mathematical functions to account balances and financial values
+Rounded monetary values for reporting
+Calculated absolute differences and financial metrics
+Improved numerical accuracy in business reports
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
