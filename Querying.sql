@@ -2629,3 +2629,20 @@ VALUES
 EXEC usp_InsertCustomers @CustomerList;
 
 Select * from Account_master
+
+-- Parameter Sniffing & Query Optimization
+CREATE PROC usp_GetAccountsByBranch
+(
+    @Branch CHAR(3)
+)
+AS
+BEGIN
+
+    SELECT *
+    FROM Account_master
+    WHERE Brid = @Branch;
+
+END;
+
+EXEC usp_GetAccountsByBranch 'BR1';
+EXEC usp_GetAccountsByBranch 'BR5';
