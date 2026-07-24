@@ -649,6 +649,18 @@ Rounded monetary values for reporting
 Calculated absolute differences and financial metrics
 Improved numerical accuracy in business reports
 
+✔ Parameter Sniffing
+Explored SQL Server's parameter sniffing mechanism during stored procedure execution
+Analyzed how execution plans are generated based on initial parameter values
+Identified scenarios where cached execution plans may impact query performance
+Applied optimization techniques to improve query execution consistency
+
+📌 Concepts Covered:
+Execution Plan Caching
+Parameter Sniffing
+Query Optimizer
+Performance Tuning
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
