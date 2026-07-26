@@ -2646,3 +2646,20 @@ END;
 
 EXEC usp_GetAccountsByBranch 'BR1';
 EXEC usp_GetAccountsByBranch 'BR5';
+
+-- Parameter Sniffing Optimization Techniques
+alter PROC usp_GetAccountsByBranch
+(
+    @Branch CHAR(3)
+)
+WITH RECOMPILE
+AS
+BEGIN
+
+    SELECT *
+    FROM Account_master
+    WHERE Brid = @Branch;
+
+END;
+
+EXEC usp_GetAccountsByBranch 'BR1';
