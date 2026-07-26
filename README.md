@@ -661,6 +661,19 @@ Parameter Sniffing
 Query Optimizer
 Performance Tuning
 
+✔ Parameter Sniffing Optimization Techniques
+Used recompilation to generate optimized execution plans
+Applied local variables to reduce parameter sniffing effects
+Evaluated query hints for performance optimization
+Improved stored procedure efficiency for varying workloads
+
+📌 Common Solutions:
+OPTION (RECOMPILE)
+WITH RECOMPILE
+Local Variables
+OPTIMIZE FOR
+OPTIMIZE FOR UNKNOWN
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
@@ -837,42 +850,36 @@ WHERE Acid = 122;
 * Used to simplify controlled data modifications
 
 ### ✔ Advanced View Operations & View Security
-
 * Created views for time-based transaction analysis and customer segmentation
 * Performed joins between views and base tables for integrated reporting
 * Built hierarchical views by creating views on top of existing views
 * Implemented view security using `SCHEMABINDING` concepts and `ENCRYPTION`
 
 📌 View-Based Analytics:
-
 * Created views for current-year transaction reporting
 * Filtered data using date-based conditions (`DATEDIFF`)
 * Built product-specific customer views (FD, SB, etc.)
 * Created branch-wise customer segmentation views
 
 📌 View Relationships & Joins:
-
 * Joined views with tables for consolidated reporting
 * Created views based on other views
 * Supported multi-level view architecture
 * Simplified complex business queries
 
 📌 View Dependencies:
-
 * Dependent views fail if parent views are removed
 * Schema modifications can impact views, procedures, and functions
 * Object naming consistency is critical for maintainability
 * Dependency management is essential in production systems
 
 📌 View Security Features:
-
 * `WITH ENCRYPTION` hides view source code
 * `SP_HELPTEXT` cannot display encrypted view definitions
 * `SCHEMABINDING` prevents structural table modifications
 * Improves protection of business logic and database objects
 
 ### ✔ Views with CHECK OPTION
-
 * Implemented views with `WITH CHECK OPTION` to enforce view conditions
 * Restricted updates that would move rows outside the view definition
 * Preserved data consistency through view-level validation
