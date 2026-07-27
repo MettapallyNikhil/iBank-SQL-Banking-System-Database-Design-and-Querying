@@ -661,7 +661,7 @@ Parameter Sniffing
 Query Optimizer
 Performance Tuning
 
-✔ Parameter Sniffing Optimization Techniques
+✔ Parameter Sniffing & Optimization Techniques
 Used recompilation to generate optimized execution plans
 Applied local variables to reduce parameter sniffing effects
 Evaluated query hints for performance optimization
@@ -673,6 +673,18 @@ WITH RECOMPILE
 Local Variables
 OPTIMIZE FOR
 OPTIMIZE FOR UNKNOWN
+
+✔ Query Execution Plans
+Explored SQL Server execution plans to analyze query performance
+Identified expensive operators and inefficient query execution paths
+Evaluated index usage and table scan operations
+Applied execution plan analysis for SQL query optimization
+
+📌 Concepts Covered:
+Estimated Execution Plan
+Actual Execution Plan
+Query Optimizer
+Execution Operators
 
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
