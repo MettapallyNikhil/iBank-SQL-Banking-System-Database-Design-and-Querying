@@ -2663,3 +2663,11 @@ BEGIN
 END;
 
 EXEC usp_GetAccountsByBranch 'BR1';
+
+-- Query Execution Plans
+SELECT
+    Acid,
+    Name,
+    ClearBalance
+FROM Account_master
+WHERE Brid = 'BR1';
