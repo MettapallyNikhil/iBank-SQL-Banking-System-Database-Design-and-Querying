@@ -2671,3 +2671,12 @@ SELECT
     ClearBalance
 FROM Account_master
 WHERE Brid = 'BR1';
+
+-- Reading Execution Plans
+-- Before creating an index
+SELECT *
+FROM Account_master
+WHERE Brid = 'BR2';
+
+CREATE INDEX IX_Account_Brid
+ON Account_master(Brid);
