@@ -686,6 +686,12 @@ Actual Execution Plan
 Query Optimizer
 Execution Operators
 
+✔ Execution Plan Optimization
+Improved query performance using appropriate indexing strategies
+Reduced full table scans by optimizing search conditions
+Evaluated query cost to identify optimization opportunities
+Enhanced stored procedure performance through execution plan analysis
+
 ## ⚡ Triggers & Automated Data Validation
 - Explored automated database validations using SQL Server Triggers
 - Implemented event-driven validation logic during data modifications
