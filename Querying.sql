@@ -2680,3 +2680,15 @@ WHERE Brid = 'BR2';
 
 CREATE INDEX IX_Account_Brid
 ON Account_master(Brid);
+
+-- SQL Interview Questions & Solutions
+1. Find the Second Highest Clearbalance
+SELECT MAX(Clearbalance)
+FROM Account_master
+WHERE Clearbalance <
+(
+    SELECT MAX(Clearbalance)
+    FROM Account_master
+);
+
+select * from Account_master
