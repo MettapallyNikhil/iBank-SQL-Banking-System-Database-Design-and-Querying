@@ -969,6 +969,10 @@ WHERE ClearBalance IN
 )
 ORDER BY ClearBalance;
 
+✔ Find the Second Highest ClearBalance
+Retrieved the second highest account balance using a subquery
+Applied aggregate functions to identify the maximum value below the highest balance
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
 - Implementing multi-table relationships  
