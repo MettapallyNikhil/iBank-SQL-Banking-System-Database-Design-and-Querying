@@ -2692,3 +2692,28 @@ WHERE Clearbalance <
 );
 
 select * from Account_master
+
+2. Find Duplicate Records
+
+SELECT ClearBalance,
+    COUNT(*) AS Total
+	FROM Account_master
+	GROUP BY ClearBalance
+	HAVING COUNT(*) > 1;
+
+3. Delete Duplicate Rows
+	
+WITH DuplicateRecords AS
+(
+    SELECT *,
+           ROW_NUMBER() OVER
+           (
+               PARTITION BY ClearBalance
+               ORDER BY Acid
+           ) AS RowNum
+    FROM Account_master
+)
+
+DELETE
+FROM DuplicateRecords
+WHERE RowNum > 1;
