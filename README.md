@@ -977,6 +977,10 @@ Applied aggregate functions to identify the maximum value below the highest bala
 Identified duplicate records using GROUP BY and HAVING
 Applied aggregate functions to detect repeated values in a dataset
 
+✔ Delete Duplicate Rows
+Removed duplicate records while preserving the first occurrence
+Applied Common Table Expressions (CTEs) with window functions for duplicate identification
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
 - Implementing multi-table relationships  
