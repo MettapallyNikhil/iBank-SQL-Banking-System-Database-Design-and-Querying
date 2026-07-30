@@ -973,6 +973,10 @@ ORDER BY ClearBalance;
 Retrieved the second highest account balance using a subquery
 Applied aggregate functions to identify the maximum value below the highest balance
 
+✔ Find Duplicate Records
+Identified duplicate records using GROUP BY and HAVING
+Applied aggregate functions to detect repeated values in a dataset
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
 - Implementing multi-table relationships  
