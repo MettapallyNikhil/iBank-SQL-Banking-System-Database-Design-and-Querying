@@ -981,6 +981,10 @@ Applied aggregate functions to detect repeated values in a dataset
 Removed duplicate records while preserving the first occurrence
 Applied Common Table Expressions (CTEs) with window functions for duplicate identification
 
+✔ Find the Nth Highest Account Balance
+Retrieved the Nth highest customer account balance using window functions
+Applied DENSE_RANK() to rank accounts based on their clear balance
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
 - Implementing multi-table relationships  
