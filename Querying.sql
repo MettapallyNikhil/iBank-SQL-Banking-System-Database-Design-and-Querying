@@ -2717,3 +2717,21 @@ WITH DuplicateRecords AS
 DELETE
 FROM DuplicateRecords
 WHERE RowNum > 1;
+
+-- Find the Nth Highest Balance
+DECLARE @N INT = 3;
+
+WITH RankedAccounts AS
+(
+    SELECT Acid,
+           Name,
+           ClearBalance,
+           DENSE_RANK() OVER (ORDER BY ClearBalance DESC) AS RankNo
+    FROM Account_master
+)
+
+SELECT Acid,
+       Name,
+       ClearBalance
+FROM RankedAccounts
+WHERE RankNo = @N;
