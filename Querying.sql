@@ -2735,3 +2735,22 @@ SELECT Acid,
        ClearBalance
 FROM RankedAccounts
 WHERE RankNo = @N;
+
+-- Find Customers Without Transactions
+SELECT *
+FROM Account_master A
+WHERE NOT EXISTS
+(
+    SELECT 1
+    FROM Transaction_master T
+    WHERE T.Acid = A.Acid
+);
+
+-- Find Accounts with Negative Balance
+SELECT
+    Acid,
+    Name,
+    ClearBalance,
+    Status
+FROM Account_master
+WHERE ClearBalance < 0;
