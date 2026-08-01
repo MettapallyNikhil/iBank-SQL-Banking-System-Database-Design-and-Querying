@@ -985,6 +985,16 @@ Applied Common Table Expressions (CTEs) with window functions for duplicate iden
 Retrieved the Nth highest customer account balance using window functions
 Applied DENSE_RANK() to rank accounts based on their clear balance
 
+✔ Find Customers Without Transactions
+Identified customers who have not performed any transactions
+Applied correlated subqueries using NOT EXISTS
+Retrieved inactive customer accounts for business analysis
+
+✔ Find Accounts with Negative Balance
+Retrieved customer accounts with negative balances
+Applied conditional filtering using the WHERE clause
+Identified overdrawn accounts for financial monitoring
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
 - Implementing multi-table relationships  
