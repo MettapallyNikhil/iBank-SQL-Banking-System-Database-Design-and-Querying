@@ -2754,3 +2754,48 @@ SELECT
     Status
 FROM Account_master
 WHERE ClearBalance < 0;
+
+-- Branch wise Total Balance
+SELECT
+    Brid,
+    SUM(ClearBalance) AS TotalBalance
+FROM Account_master
+GROUP BY Brid;
+
+-- Running Total of Account Balances
+SELECT
+    Acid,
+    Name,
+    ClearBalance,
+    SUM(ClearBalance) OVER
+    (
+        ORDER BY Acid
+    ) AS RunningTotal
+FROM Account_master;
+
+-- Transfer Money Using Transactions
+BEGIN TRY
+
+    BEGIN TRANSACTION;
+
+    -- Debit amount from sender
+    UPDATE Account_master
+    SET ClearBalance = ClearBalance - 5000
+    WHERE Acid = 101;
+
+    -- Credit amount to receiver
+    UPDATE Account_master
+    SET ClearBalance = ClearBalance + 5000
+    WHERE Acid = 102;
+
+    COMMIT TRANSACTION;
+
+END TRY
+
+BEGIN CATCH
+
+    ROLLBACK TRANSACTION;
+
+    PRINT ERROR_MESSAGE();
+
+END CATCH;
