@@ -995,6 +995,21 @@ Retrieved customer accounts with negative balances
 Applied conditional filtering using the WHERE clause
 Identified overdrawn accounts for financial monitoring
 
+✔ Branch-wise Total Balance
+Calculated the total account balance for each branch using aggregate functions
+Grouped customer accounts based on branch identifiers
+Generated branch-level financial summaries for reporting
+
+✔ Running Total of Account Balances
+Calculated cumulative account balances using window functions
+Applied SUM() OVER() for running total analysis
+Generated sequential financial summaries without modifying source data
+
+✔ Transfer Money Using Transactions
+Implemented secure fund transfers using SQL Server transactions
+Ensured atomic execution through transaction control commands
+Rolled back changes automatically when an error occurred
+
 ## 🧠 Key Learnings
 - Designing normalized relational databases  
 - Implementing multi-table relationships  
